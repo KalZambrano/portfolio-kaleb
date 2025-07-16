@@ -1,5 +1,8 @@
 ---
 import '@/styles/global.css'
+import Footer from '@/components/Footer.astro'
+import Header from '@/components/Header.astro'
+import '@fontsource-variable/onest';
 ---
 <!doctype html>
 <html lang="en">
@@ -10,14 +13,19 @@ import '@/styles/global.css'
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
+	<Header/>
 	<body>
-		<slot />
+		<main>
+			<slot />
+		</main>
 	</body>
+	<Footer/>
 </html>
 
 <style>
 	html,
 	body {
+		font-family: 'Onest Variable', sans-serif;
 		margin: 0;
 		width: 100%;
 		height: 100%;
