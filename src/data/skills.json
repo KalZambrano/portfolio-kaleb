@@ -33,6 +33,14 @@
       }
     },
     {
+      "name": "Python",
+      "icon": "python.svg",
+      "level": {
+        "es": "Básico",
+        "en": "Basic"
+      }
+    },
+    {
       "name": "Angular",
       "icon": "angular.svg",
       "level": {
@@ -78,6 +86,14 @@
       "level": {
         "es": "Intermedio",
         "en": "Middle"
+      }
+    },
+    {
+      "name": "WordPress",
+      "icon": "wordpress.svg",
+      "level": {
+        "es": "Aprendiendo",
+        "en": "Learning"
       }
     },
     {
