@@ -9,6 +9,15 @@
             },
             "skills":["Laravel", "Hostinger"],
             "document": "NHL_certificate.pdf"
+        },
+        {
+            "organization": "EF Set",
+            "image": "ef-logo.webp",
+            "job_title": {
+                "es": "Certificado de inglés",
+                "en": "English Certificate"
+            },
+            "document": "NHL_certificate.pdf"
         }
     ],
     "recomendations": [
