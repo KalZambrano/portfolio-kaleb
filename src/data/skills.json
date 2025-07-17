@@ -1,0 +1,12 @@
+{
+    "skills": [
+        {
+            "name": "React",
+            "icon": "react_dark.svg",
+            "level": {
+                "es": "Intermedio",
+                "en": "Middle"
+            }
+        }
+    ]
+}
