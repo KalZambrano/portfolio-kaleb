@@ -1,3 +1,8 @@
 {
-    "SEO_TITLE_1": "Welcome"
+    "SEO_TITLE_1": "Kaleb Zambrano's Portfolio | Junior Web Developer and Programmer",
+    "SKILLS":{
+        "SKILLS_TITLE": "Skills",
+        "SKILLS_SUBTITLE": "What can I do?"
+    },
+    "FOOTER_TITLE": "Made with ❤️ by"
 }
