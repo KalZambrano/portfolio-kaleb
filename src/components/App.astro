@@ -5,6 +5,7 @@ import Skills from '@/components/Skills.astro';
 import Projects from '@/components/Projects.astro';
 import Experience from './Experience.astro';
 import Introduction from '@/components/Introduction.astro'
+import Certificates from '@/components/Certificates.astro'
 import { getI18N } from '@/i18n';
 
 const { currentLocale } = Astro
@@ -16,5 +17,6 @@ const i18n = getI18N({currentLocale})
 	<Experience/>
 	<Skills/>
 	<Projects/>
+	<Certificates/>
 	<AboutMe/>
 </Layout>

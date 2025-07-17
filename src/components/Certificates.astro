@@ -1,0 +1,21 @@
+---
+import certificatesData from '@/data/certificates.json'
+import CertificateCard from './CertificateCard.astro';
+import SectionContainer from './SectionContainer.astro';
+
+import { getI18N } from '@/i18n';
+
+const { currentLocale } = Astro
+const i18n = getI18N({currentLocale})
+
+const certificates = certificatesData.certificates;
+---
+<SectionContainer>
+    <h2 class="dark:text-gray-500 font-semibold text-xl mb-2">{i18n.CERTIFICATES.CERTIFICATE_TITLE}</h2>
+    <h3 class="dark:text-gray-300 font-bold text-5xl mb-8">{i18n.CERTIFICATES.CERTIFICATE_SUBTITLE}</h3>
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-5 mx-3 my-4">
+    {certificates.map(certificate => (
+        <CertificateCard title={certificate.job_title[currentLocale]} organization={certificate.organization} imageSrc={certificate.image} skills={certificate.skills} href={certificate.document}/>
+    ))}
+    </section>
+</SectionContainer>
