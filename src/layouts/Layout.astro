@@ -3,19 +3,23 @@ import '@/styles/global.css'
 import Footer from '@/components/Footer.astro'
 import Header from '@/components/Header.astro'
 import '@fontsource-variable/onest';
+import { getLangFromUrl } from "@/i18n/utils"
+
+const { title } = Astro.props
+const lang = getLangFromUrl(Astro.url);
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{ title }</title>
 	</head>
-	<Header/>
+	<!-- <Header/> -->
 	<body>
-		<main>
+		<main class="max-w-7xl mx-auto">
 			<slot />
 		</main>
 	</body>
