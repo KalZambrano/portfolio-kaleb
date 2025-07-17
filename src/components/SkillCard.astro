@@ -1,0 +1,8 @@
+---
+const {iconSrc, title, level} = Astro.props
+---
+<div class="rounded-md flex flex-col items-center gap-2">
+    <h4 class="font-bold">{title}</h4>
+    <img class="size-20" src={`/icons/${iconSrc}`} alt="">
+    <span class="rounded-full text-gray-300 bg-gray-800 px-3 py-1">{level}</span>
+</div>

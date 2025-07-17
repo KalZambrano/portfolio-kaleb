@@ -1,0 +1,19 @@
+---
+import skillsData from '@/data/skills.json'
+import SkillCard from './SkillCard.astro';
+
+import { getI18N } from '@/i18n';
+
+const { currentLocale } = Astro
+const i18n = getI18N({currentLocale})
+
+const skills = skillsData.skills;
+---
+<h2>{i18n.SKILLS.SKILLS_TITLE}</h2>
+<h3>{i18n.SKILLS.SKILLS_SUBTITLE}</h3>
+
+<section class="flex flex-wrap">
+  {skills.map(skill => (
+    <SkillCard title={skill.name} level={skill.level[currentLocale]} iconSrc={skill.icon}/>
+  ))}
+</section>
