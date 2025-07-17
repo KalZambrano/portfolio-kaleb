@@ -1,0 +1,44 @@
+---
+import MaximizeIcon from "@/components/icons/Maximize.astro";
+import GlareHover from "y/GlareHover/GlareHover";
+
+const { imageSrc, organization, author, href } = Astro.props;
+---
+
+<article
+  class="border-2 dark:border-gray-700 rounded-2xl group"
+>
+  <GlareHover
+    client:load
+    glareColor="#2dffbc"
+    background="transparent"
+    glareOpacity={0.3}
+    glareAngle={-30}
+    glareSize={300}
+    transitionDuration={800}
+    playOnce={false}
+    className={"px-4"}
+  >
+    <div class="flex flex-col items-center gap-4 mb-3 group-hover:opacity-10 duration-700">
+      <img
+        class="w-20 h-fit rounded-xl"
+        src={`/${imageSrc}`}
+        alt={`${organization} logo`}
+      />
+      <span class="text-center">
+        <h3 class="text-xl font-bold text-balance text-center">
+          {organization}
+        </h3>
+        <h4 class="text-sm dark:text-gray-300">{author}</h4>
+      </span>
+    </div>
+    <a
+    target="_blank"
+      class="group-hover:opacity-100 opacity-0 transition-opacity duration-200 ease-in-out text-cyan-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      href={`/documents/${href}`}
+    >
+      <MaximizeIcon class="size-16" />
+      <span class="text-center text-2xl font-bold">View</span>
+    </a>
+  </GlareHover>
+</article>

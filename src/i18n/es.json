@@ -8,5 +8,9 @@
         "CERTIFICATE_TITLE": "Certificados",
         "CERTIFICATE_SUBTITLE": "¿Qué he conseguido?"
     },
+    "RECOMENDATIONS": {
+        "RECOMENDATIONS_TITLE": "Cartas de Recomendación",
+        "RECOMENDATIONS_SUBTITLE": "¿En qué he destacado?"
+    },
     "FOOTER_TITLE": "Hecho con ❤️ por"
 }

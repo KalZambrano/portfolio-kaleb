@@ -3,13 +3,20 @@
         {
             "organization": "Neon House Led",
             "image": "NHL_icon.webp",
-            "color": "green",
             "job_title": {
                 "es": "Desarrollador Web Jr.",
                 "en": "Junior Web Developer"
             },
             "skills":["Laravel", "Hostinger"],
             "document": "NHL_certificate.pdf"
+        }
+    ],
+    "recomendations": [
+        {
+            "organization": "Neon House Led",
+            "image": "NHL_icon.webp",
+            "author": "Juan Carlos Molina",
+            "document": "NHL_recomendation.pdf"
         }
     ]
 }
