@@ -4,5 +4,9 @@
         "SKILLS_TITLE": "Skills",
         "SKILLS_SUBTITLE": "What can I do?"
     },
+    "CERTIFICATES":{
+        "CERTIFICATE_TITLE": "Certificates",
+        "CERTIFICATE_SUBTITLE": "What have I achieved?"
+    },
     "FOOTER_TITLE": "Made with ❤️ by"
 }
