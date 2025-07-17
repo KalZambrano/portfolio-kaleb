@@ -19,7 +19,7 @@ const lang = getLangFromUrl(Astro.url);
 	</head>
 	<!-- <Header/> -->
 	<body>
-		<main class="max-w-7xl mx-auto">
+		<main class="max-w-6xl mx-auto">
 			<slot />
 		</main>
 	</body>
@@ -29,6 +29,7 @@ const lang = getLangFromUrl(Astro.url);
 <style>
 	html,
 	body {
+		color-scheme: light dark;
 		font-family: 'Onest Variable', sans-serif;
 		margin: 0;
 		width: 100%;

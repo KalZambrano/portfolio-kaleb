@@ -1,1 +1,14 @@
-<span><strong class="text-cyan-500">Kaleb Zambrano</strong></span>
+---
+import { getI18N } from '@/i18n';
+
+const { currentLocale } = Astro
+const i18n = getI18N({currentLocale})
+---
+
+<footer>
+    <hr class="absolute h-[2px] w-full min-w-[18rem] mt-5 border-t-0 bg-transparent bg-gradient-to-r from-transparent dark:via-gray-400 via-black to-transparent bg-center md:my-9">
+    <br>
+    <div class="flex flex-col justify-center items-center p-8">
+        <p>{i18n.FOOTER_TITLE} <strong class="text-cyan-500">Kaleb Zambrano</strong></p>
+    </div>
+</footer>

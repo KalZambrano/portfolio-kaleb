@@ -3,6 +3,8 @@ import AboutMe from '@/components/AboutMe.astro';
 import Layout from '@/layouts/Layout.astro';
 import Skills from '@/components/Skills.astro';
 import Projects from '@/components/Projects.astro';
+import Experience from './Experience.astro';
+import Introduction from '@/components/Introduction.astro'
 import { getI18N } from '@/i18n';
 
 const { currentLocale } = Astro
@@ -10,6 +12,8 @@ const i18n = getI18N({currentLocale})
 ---
 
 <Layout title=`${i18n.SEO_TITLE_1}`>
+	<Introduction/>
+	<Experience/>
 	<Skills/>
 	<Projects/>
 	<AboutMe/>
