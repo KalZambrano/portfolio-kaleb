@@ -9,10 +9,10 @@ const i18n = getI18N({currentLocale})
 
 const skills = skillsData.skills;
 ---
-<h2>{i18n.SKILLS.SKILLS_TITLE}</h2>
-<h3>{i18n.SKILLS.SKILLS_SUBTITLE}</h3>
+<h2 class="dark:text-gray-500 font-semibold text-xl mb-2">{i18n.SKILLS.SKILLS_TITLE}</h2>
+<h3 class="dark:text-gray-300 font-bold text-5xl mb-8">{i18n.SKILLS.SKILLS_SUBTITLE}</h3>
 
-<section class="flex flex-wrap">
+<section class="flex flex-wrap gap-6 justify-center mx-3 my-4">
   {skills.map(skill => (
     <SkillCard title={skill.name} level={skill.level[currentLocale]} iconSrc={skill.icon}/>
   ))}
