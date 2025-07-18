@@ -1,5 +1,9 @@
 {
     "SEO_TITLE_1": "Kaleb Zambrano's Portfolio | Junior Web Developer and Programmer",
+    "EXPERIENCES":{
+        "EXPERIENCES_TITLE": "Projects",
+        "EXPERIENCES_SUBTITLE": "What I've worked on?"
+    },
     "SKILLS":{
         "SKILLS_TITLE": "Skills",
         "SKILLS_SUBTITLE": "What can I do?"
