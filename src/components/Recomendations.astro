@@ -12,7 +12,7 @@ const recomendations = recomendationData.recomendations;
 <SectionContainer>
     <h2 class="dark:text-gray-500 font-semibold text-xl mb-2">{i18n.RECOMENDATIONS.RECOMENDATIONS_TITLE}</h2>
     <h3 class="dark:text-gray-300 font-bold text-5xl mb-8">{i18n.RECOMENDATIONS.RECOMENDATIONS_SUBTITLE}</h3>
-    <section class="flex flex-wrap gap-5 mx-3 my-4">
+    <section class="flex flex-wrap justify-center md:justify-start gap-5 mx-3 my-4">
     {recomendations.map(recomendation => (
         <RecomendationCard author={recomendation.author} organization={recomendation.organization} imageSrc={recomendation.image} href={recomendation.document}/>
     ))}
