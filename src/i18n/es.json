@@ -1,7 +1,20 @@
 {
     "SEO_TITLE_1": "Portfolio de Kaleb Zambrano | Desarrollador y Programador Web Jr.",
+    "EXPERIENCES":{
+        "EXPERIENCES_TITLE": "Proyectos",
+        "EXPERIENCES_SUBTITLE": "¿En qué he trabajado?"
+    },
     "SKILLS":{
         "SKILLS_TITLE": "Habilidades",
         "SKILLS_SUBTITLE": "¿Qué puedo hacer?"
-    }
+    },
+    "CERTIFICATES":{
+        "CERTIFICATE_TITLE": "Certificados",
+        "CERTIFICATE_SUBTITLE": "¿Qué he conseguido?"
+    },
+    "RECOMENDATIONS": {
+        "RECOMENDATIONS_TITLE": "Cartas de Recomendación",
+        "RECOMENDATIONS_SUBTITLE": "¿En qué he destacado?"
+    },
+    "FOOTER_TITLE": "Hecho con ❤️ por"
 }

@@ -1,12 +1,164 @@
 {
-    "skills": [
-        {
-            "name": "React",
-            "icon": "react_dark.svg",
-            "level": {
-                "es": "Intermedio",
-                "en": "Middle"
-            }
-        }
-    ]
+  "skills": [
+    {
+      "name": "HTML",
+      "icon": "html5.svg",
+      "level": {
+        "es": "Avanzado",
+        "en": "Advanced"
+      }
+    },
+    {
+      "name": "CSS",
+      "icon": "css.svg",
+      "level": {
+        "es": "Avanzado",
+        "en": "Advanced"
+      }
+    },
+    {
+      "name": "JavaScript",
+      "icon": "javascript.svg",
+      "level": {
+        "es": "Avanzado",
+        "en": "Advanced"
+      }
+    },
+    {
+      "name": "TypeScript",
+      "icon": "typescript.svg",
+      "level": {
+        "es": "Intermedio",
+        "en": "Middle"
+      }
+    },
+    {
+      "name": "Python",
+      "icon": "python.svg",
+      "level": {
+        "es": "Básico",
+        "en": "Basic"
+      }
+    },
+    {
+      "name": "Angular",
+      "icon": "angular.svg",
+      "level": {
+        "es": "Básico",
+        "en": "Basic"
+      }
+    },
+    {
+      "name": "Next.js",
+      "icon": "nextjs_icon_dark.svg",
+      "level": {
+        "es": "Básico",
+        "en": "Basic"
+      }
+    },
+    {
+      "name": "Astro",
+      "icon": "astro_dark.svg",
+      "level": {
+        "es": "Intermedio",
+        "en": "Middle"
+      }
+    },
+    {
+      "name": "Tailwind",
+      "icon": "tailwindcss.svg",
+      "level": {
+        "es": "Intermedio",
+        "en": "Middle"
+      }
+    },
+    {
+      "name": "Node.js",
+      "icon": "nodejs.svg",
+      "level": {
+        "es": "Intermedio",
+        "en": "Middle"
+      }
+    },
+    {
+      "name": "Express",
+      "icon": "expressjs_dark.svg",
+      "level": {
+        "es": "Intermedio",
+        "en": "Middle"
+      }
+    },
+    {
+      "name": "WordPress",
+      "icon": "wordpress.svg",
+      "level": {
+        "es": "Aprendiendo",
+        "en": "Learning"
+      }
+    },
+    {
+      "name": "Laravel",
+      "icon": "laravel.svg",
+      "level": {
+        "es": "Intermedio",
+        "en": "Middle"
+      }
+    },
+    {
+      "name": "PHP",
+      "icon": "php_dark.svg",
+      "level": {
+        "es": "Básico",
+        "en": "Basic"
+      }
+    },
+    {
+      "name": "MySQL",
+      "icon": "mysql.svg",
+      "level": {
+        "es": "Intermedio",
+        "en": "Middle"
+      }
+    },
+    {
+      "name": "Git",
+      "icon": "git.svg",
+      "level": {
+        "es": "Intermedio",
+        "en": "Middle"
+      }
+    },
+    {
+      "name": "Vite",
+      "icon": "vitejs.svg",
+      "level": {
+        "es": "Intermedio",
+        "en": "Middle"
+      }
+    },
+    {
+      "name": "Vercel",
+      "icon": "vercel_dark.svg",
+      "level": {
+        "es": "Intermedio",
+        "en": "Middle"
+      }
+    },
+    {
+      "name": "Clerk",
+      "icon": "clerk-dark.svg",
+      "level": {
+        "es": "Aprendiendo",
+        "en": "Learning"
+      }
+    },
+    {
+      "name": "Cloudflare",
+      "icon": "cloudflare.svg",
+      "level": {
+        "es": "Aprendiendo",
+        "en": "Learning"
+      }
+    }
+  ]
 }

@@ -23,40 +23,30 @@ export const showDefaultLang = false;
 
 export const ui = {
 	es: {
-		'nav.inicio': 'Inicio',
-		'nav.vota': 'Vota',
-		'nav.info': 'Información',
-		'nav.archivo': 'Archivo',
-		'nav.legal': 'Aviso Legal',
-		'nav.privacidad': 'Privacidad',
-		'nav.cookies': 'Cookies',
+		'nav.habilidades': 'Habilidades',
+		'nav.proyectos': 'Proyectos',
+		'nav.certificados': 'Certificados',
+		'nav.sobremi': 'Sobre mí',
 	},
 	en: {
-		'nav.inicio': 'Home',
-		'nav.vota': 'Vote',
-		'nav.info': 'Information',
-		'nav.archivo': 'Archive',
-		'nav.legal': 'Legal Notice',
-		'nav.privacidad': 'Privacy',
-		'nav.cookies': 'Cookies',
+		'nav.habilidades': 'Skills',
+		'nav.proyectos': 'Projects',
+		'nav.certificados': 'Certificates',
+		'nav.sobremi': 'About Me',
 	},
 } as const;
 
 export const routes = {
 	es: {
-		vota: 'vota',
-		info: 'info',
-		archivo: 'archivo',
-		'aviso-legal': 'aviso-legal',
-		privacidad: 'privacidad',
-		cookies: 'cookies',
+		habilidades: 'habilidades',
+		proyectos: 'proyectos',
+		certificados: 'certificados',
+		sobremi:'sobremi'
 	},
 	en: {
-		vota: 'vote',
-		info: 'information',
-		archivo: 'archive',
-		'aviso-legal': 'legal-notice',
-		privacidad: 'privacy',
-		cookies: 'cookies',
+		skills: 'skills',
+		projects: 'projects',
+		certificates: 'certificates',
+		aboutme:'aboutme'
 	},
 };

@@ -1,0 +1,67 @@
+---
+import RedirectIcon from "@/components/icons/Redirect.astro";
+
+type Tec = "Laravel" | "Astro" | "JS" | "Tailwind" | "React" | "TS";
+
+const LANGUAJE_DICTIONARY: Record<Tec, {color: string, src:string, alt: string}> = {
+  Laravel: { color: 'bg-red-600/15', src: '/icons/laravel.svg', alt: 'Laravel Icon' },
+  Astro: { color: 'bg-orange-600/15', src: '/icons/astro_dark.svg', alt: 'Astro Icon' },
+  JS: { color: 'bg-yellow-600/15', src: '/icons/javascript.svg', alt: 'JavaScript Icon' },
+  Tailwind: { color: 'bg-cyan-600/15', src: '/icons/tailwindcss.svg', alt: 'Tailwind Icon' },
+  React: { color: 'bg-sky-600/15', src: '/icons/react_dark.svg', alt: 'React Icon' },
+  TS: { color: 'bg-blue-600/15', src: '/icons/typescript.svg', alt: 'TypeScript Icon' },
+};
+
+const generateTecIconHTML = (tec: Tec): string => {
+  const { color, src, alt } = LANGUAJE_DICTIONARY[tec];
+  return `<img class="size-9 ${color} p-1.5 rounded-md" src="${src}" alt="${alt}">`;
+};
+
+const { image, title, description, github, url } = Astro.props;
+const { tecs } = Astro.props as { tecs: Tec[] };
+---
+
+<article
+  class="border-2 dark:border-gray-700 rounded-2xl w-full group"
+>
+  <div class="rounded-2xl overflow-hidden" style="mask-image: linear-gradient(black 70%, transparent);">
+    <img
+    class="group-hover:scale-110 ease-in-out transition-all duration-400"
+    src={`/projects/${image}`}
+    alt={`Imagen de dresentación del proyecto de ${title}`}
+    width="2600"
+    height="1240"
+  />
+  </div>
+  <div class="flex flex-col justify-between p-5 h-52">
+    <div class="mb-4">
+      <h2 class="text-2xl font-bold mb-2">{title}</h2>
+      <p class="dark:text-gray-400 line-clamp-3">{description}</p>
+    </div>
+    <div class="flex justify-between">
+      <ul class="flex gap-2">
+        {
+          tecs.map((tec: Tec) => {
+            return <li set:html={generateTecIconHTML(tec)} />;
+          })
+        }
+      </ul>
+      <ul class="flex gap-2">
+        {
+          github ? (
+            <a target="_blank" href={github}>
+              <img
+                class="size-9 bg-gray-600/15 p-1.5 rounded-md"
+                src="/icons/github_dark.svg"
+                alt="Icono de Github"
+              />
+            </a>
+          ) : null
+        }
+        <a target="_blank" href={url}>
+          <RedirectIcon class="size-9 bg-gray-600/15 p-1.5 rounded-md" />
+        </a>
+      </ul>
+    </div>
+  </div>
+</article>
