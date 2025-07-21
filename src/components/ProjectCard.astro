@@ -58,7 +58,7 @@ const { image, title, description, github, url } = Astro.props;
 const { tecs } = Astro.props as { tecs: Tec[] };
 ---
 
-<article class="border border-gray-700 rounded-2xl w-full group">
+<article class="border bg-white/80 dark:bg-gray-950/80 border-gray-400 dark:border-gray-700 rounded-2xl w-full group transition-colors ease-in-out">
   <div
     class="rounded-2xl"
     style="mask-image: linear-gradient(black 70%, transparent);"
