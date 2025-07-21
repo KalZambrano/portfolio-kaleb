@@ -1,8 +1,13 @@
 ---
-const {iconSrc, title, level} = Astro.props
+const {iconSrc, iconDark, title, level} = Astro.props
 ---
-<article class="w-[136px] h-fit rounded-xl flex flex-col items-center gap-3 border dark:border-gray-700 p-3 cursor-default hover:scale-110 transition-all">
+<article class="w-[136px] h-fit rounded-xl flex flex-col items-center gap-3 border border-gray-700 p-3 cursor-default hover:scale-110 transition-all">
     <h4 class="font-bold">{title}</h4>
-    <img class="size-16" src={`/icons/${iconSrc}`} alt={`${title} icon`}>
-    <span class="rounded-full dark:text-gray-300 dark:bg-gray-800 px-3 py-1 font-light text-sm">{level}</span>
+    {
+        iconDark
+        ? <img class="size-16 dark:hidden block" src={`/icons/${iconSrc}`} alt={`${title} icon`}>
+            <img class="size-16 dark:block hidden" src={`/icons/dark/${iconDark}`} alt={`${title} dark icon`}>
+        : <img class="size-16" src={`/icons/${iconSrc}`} alt={`${title} icon`}>
+    }
+    <span class="rounded-full dark:text-gray-300 bg-gray-300 dark:bg-gray-800 px-3 py-1 font-light text-sm">{level}</span>
 </article>
