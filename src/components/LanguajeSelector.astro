@@ -1,42 +1,49 @@
 ---
-import ChevronIcon from "@/components/icons/ChevronIcon.astro"
-import { LANGUAGES } from '../i18n/ui';
-import { getRouteFromUrl, useTranslatedPath, getLangFromUrl } from '../i18n/utils';
+import ChevronIcon from "@/components/icons/ChevronIcon.astro";
+import { LANGUAGES } from "../i18n/ui";
+import {
+  getRouteFromUrl,
+  useTranslatedPath,
+  getLangFromUrl,
+} from "../i18n/utils";
 
 const route = getRouteFromUrl(Astro.url);
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 
-const currentLocaleData = LANGUAGES[lang]
+const currentLocaleData = LANGUAGES[lang];
 const otherLocales = Object.values(LANGUAGES).filter(
   (locale) => locale.code !== lang
-)
+);
 ---
 
 <div class="relative inline-block text-left z-50">
   <div
-    class="group text-white rounded-md text-xs font-semibold bg-black/30 hover:bg-black/70 transition-all"
+    class="text-white rounded-md text-xs font-semibold bg-black/30 transition-all"
   >
-    <button
-      type="button"
-      class="inline-flex justify-start items-center w-full gap-x-2 px-3 py-2"
-      aria-expanded="true"
-      aria-haspopup="true"
+    <!-- toggle oculto -->
+    <input type="checkbox" id="lang-toggle" class="peer hidden" />
+
+    <!-- label que actúa como botón -->
+    <label
+      for="lang-toggle"
+      class="inline-flex justify-start items-center w-full gap-x-2 px-3 py-2 cursor-pointer"
     >
       <currentLocaleData.flag />
       {currentLocaleData.name}
       <ChevronIcon />
-    </button>
+    </label>
+
+    <!-- menú desplegable -->
     <ul
-      class="group-hover:block group-hover:animate-fade-down group-hover:animate-duration-200 hidden pt-0.5 absolute w-full"
+      class="hidden peer-checked:block absolute w-full pt-0.5 bg-black/30 rounded-md"
     >
       {
         otherLocales.map((locale) => (
-
           <li class="py-[2px]">
             <a
-              class="rounded-md bg-black/30 hover:bg-black/70 whitespace-no-wrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2"
-              href={translatePath(`/${route ? route : ''}`, locale.code)}
+              class="rounded-md bg-black/30 whitespace-no-wrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2"
+              href={translatePath(`/${route ? route : ""}`, locale.code)}
             >
               <locale.flag />
               {locale.name}

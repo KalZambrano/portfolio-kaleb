@@ -1,12 +1,12 @@
 ---
-import MaximizeIcon from '@/components/icons/Maximize.astro'
+import MaximizeIcon from "@/components/icons/Maximize.astro";
 
 const { imageSrc, organization, title, href } = Astro.props;
 const { skills } = Astro.props as { skills: string[] };
 ---
 
 <article
-  class="border dark:border-gray-700 rounded-2xl p-4 hover:scale-105 transition-all flex flex-col justify-between"
+  class="border bg-white/80 dark:bg-gray-950/80 border-gray-400 dark:border-gray-700 rounded-2xl p-4 hover:scale-105 transition-all flex flex-col justify-between"
 >
   <div class="flex items-center gap-4 mb-3">
     <img
@@ -16,27 +16,31 @@ const { skills } = Astro.props as { skills: string[] };
     />
     <span>
       <h2 class="font-bold text-xl">{title}</h2>
-      <h3 class="dark:text-green-400">{organization}</h3>
+      <h3 class="text-green-600 dark:text-green-400">{organization}</h3>
     </span>
   </div>
   <div class="flex justify-between items-center">
     <div class="flex flex-wrap gap-3">
       {
-        skills
-        ? 
-        skills.map((skill) => (
-          <span class="rounded-full px-3 py-1 dark:text-gray-300 dark:bg-gray-800">
-            {skill}
-          </span>
-        ))
-        : <span class="rounded-full px-3 py-1 dark:text-gray-300 dark:bg-gray-800">
+        skills ? (
+          skills.map((skill) => (
+            <span class="rounded-full px-3 py-1 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 transition-colors ease-in-out">
+              {skill}
+            </span>
+          ))
+        ) : (
+          <span class="rounded-full px-3 py-1 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 transition-colors ease-in-out">
             Personal
           </span>
+        )
       }
     </div>
-    <a class="flex gap-x-1 items-center text-cyan-600" href={`/documents/${href}`}>
-        View
-        <MaximizeIcon class="size-5"/>
+    <a
+      class="flex gap-x-1 items-center text-cyan-600"
+      href={`/documents/${href}`}
+    >
+      View
+      <MaximizeIcon class="size-5" />
     </a>
   </div>
 </article>

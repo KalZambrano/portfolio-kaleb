@@ -58,7 +58,8 @@
     },
     {
       "name": "Astro",
-      "icon": "astro_dark.svg",
+      "icon": "astro.svg",
+      "iconDark": "astro_dark.svg",
       "level": {
         "es": "Intermedio",
         "en": "Middle"
@@ -82,7 +83,8 @@
     },
     {
       "name": "Express",
-      "icon": "expressjs_dark.svg",
+      "icon": "expressjs.svg",
+      "iconDark": "expressjs_dark.svg",
       "level": {
         "es": "Intermedio",
         "en": "Middle"
@@ -106,7 +108,8 @@
     },
     {
       "name": "PHP",
-      "icon": "php_dark.svg",
+      "icon": "php.svg",
+      "iconDark": "php_dark.svg",
       "level": {
         "es": "Básico",
         "en": "Basic"
@@ -138,7 +141,8 @@
     },
     {
       "name": "Vercel",
-      "icon": "vercel_dark.svg",
+      "icon": "vercel.svg",
+      "iconDark": "vercel_dark.svg",
       "level": {
         "es": "Intermedio",
         "en": "Middle"
@@ -146,7 +150,8 @@
     },
     {
       "name": "Clerk",
-      "icon": "clerk-dark.svg",
+      "icon": "clerk-light.svg",
+      "iconDark": "clerk-dark.svg",
       "level": {
         "es": "Aprendiendo",
         "en": "Learning"

@@ -14,7 +14,7 @@ const skills = skillsData.skills;
 
   <section class="flex flex-wrap gap-6 justify-center mx-3 my-4">
     {skills.map(skill => (
-      <SkillCard title={skill.name} level={skill.level[currentLocale]} iconSrc={skill.icon}/>
+      <SkillCard title={skill.name} level={skill.level[currentLocale]} iconSrc={skill.icon} iconDark={skill.iconDark}/>
     ))}
   </section>
 </SectionContainer>
