@@ -14,7 +14,8 @@
     },
     "RECOMENDATIONS": {
         "RECOMENDATIONS_TITLE": "Letters of Recommendation",
-        "RECOMENDATIONS_SUBTITLE": "What have I excelled at?"
+        "RECOMENDATIONS_SUBTITLE": "What have I excelled at?",
+        "RECOMENDATIONS_TIP_MOBILE": "(Tap to view)"
     },
     "FOOTER_TITLE": "Made with ❤️ by"
 }

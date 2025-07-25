@@ -14,7 +14,8 @@
     },
     "RECOMENDATIONS": {
         "RECOMENDATIONS_TITLE": "Cartas de Recomendación",
-        "RECOMENDATIONS_SUBTITLE": "¿En qué he destacado?"
+        "RECOMENDATIONS_SUBTITLE": "¿En qué he destacado?",
+        "RECOMENDATIONS_TIP_MOBILE": "(Tap para ver)"
     },
     "FOOTER_TITLE": "Hecho con ❤️ por"
 }
