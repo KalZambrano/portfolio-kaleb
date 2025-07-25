@@ -13,3 +13,7 @@
 @utility cicle-pattern{
     background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.35) 1px, transparent 0);
 }
+
+@view-transition{
+    navigation: auto
+}
