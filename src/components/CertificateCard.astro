@@ -6,7 +6,7 @@ const { skills } = Astro.props as { skills: string[] };
 ---
 
 <article
-  class="border bg-white/80 dark:bg-gray-950/80 border-gray-400 dark:border-gray-700 rounded-2xl p-4 hover:scale-105 transition-all flex flex-col justify-between"
+  class="border bg-white dark:bg-gray-950/80 border-gray-400 dark:border-gray-700 rounded-2xl p-4 hover:scale-105 transition-all flex flex-col justify-between"
 >
   <div class="flex items-center gap-4 mb-3">
     <img
@@ -19,17 +19,17 @@ const { skills } = Astro.props as { skills: string[] };
       <h3 class="text-green-600 dark:text-green-400">{organization}</h3>
     </span>
   </div>
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center gap-x-2">
     <div class="flex flex-wrap gap-3">
       {
         skills ? (
           skills.map((skill) => (
-            <span class="rounded-full px-3 py-1 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 transition-colors ease-in-out">
+            <span class="rounded-full px-3 py-1 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 transition-colors ease-in-out">
               {skill}
             </span>
           ))
         ) : (
-          <span class="rounded-full px-3 py-1 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 transition-colors ease-in-out">
+          <span class="rounded-full px-3 py-1 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 transition-colors ease-in-out">
             Personal
           </span>
         )
