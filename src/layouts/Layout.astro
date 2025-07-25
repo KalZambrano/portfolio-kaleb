@@ -5,7 +5,7 @@ import Header from "@/components/Header.astro";
 import "@fontsource-variable/onest";
 import { getLangFromUrl } from "@/i18n/utils";
 
-const { title } = Astro.props;
+const { title, description, keywords } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
 
@@ -14,6 +14,8 @@ const lang = getLangFromUrl(Astro.url);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description}>
+    <meta name="keywords" content={keywords}>
     <link rel="icon" type="image/svg+xml" href="/yin-yang.svg" />
     <link
       rel="icon"
