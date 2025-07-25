@@ -1,18 +1,38 @@
 ---
 import SectionContainer from "./SectionContainer.astro";
-import recomendationData from '@/data/certificates.json'
-import RecomendationCard from './RecomendationCard.astro';
-import { getI18N } from '@/i18n';
+import recomendationData from "@/data/certificates.json";
+import RecomendationCard from "./RecomendationCard.astro";
+import TapIcon from "@/components/icons/Tap.astro";
+import { getI18N } from "@/i18n";
 
-const { currentLocale } = Astro
-const i18n = getI18N({currentLocale})
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const recomendations = recomendationData.recomendations;
 ---
-<SectionContainer title={i18n.RECOMENDATIONS.RECOMENDATIONS_TITLE} subtitle={i18n.RECOMENDATIONS.RECOMENDATIONS_SUBTITLE}>
-    <section class="flex flex-wrap justify-center md:justify-start gap-5 mx-3 my-4">
-    {recomendations.map(recomendation => (
-        <RecomendationCard author={recomendation.author} organization={recomendation.organization} imageSrc={recomendation.image} href={recomendation.document}/>
-    ))}
-    </section>
+
+<SectionContainer
+  title={i18n.RECOMENDATIONS.RECOMENDATIONS_TITLE}
+  subtitle={i18n.RECOMENDATIONS.RECOMENDATIONS_SUBTITLE}
+>
+  <span
+    class="md:hidden text-xs text-gray-400 dark:text-gray-300 flex items-center gap-x-2 animate-pulse"
+    ><TapIcon class="size-6" />{
+      i18n.RECOMENDATIONS.RECOMENDATIONS_TIP_MOBILE
+    }</span
+  >
+  <section
+    class="flex flex-wrap justify-center md:justify-start gap-5 mx-3 my-4"
+  >
+    {
+      recomendations.map((recomendation) => (
+        <RecomendationCard
+          author={recomendation.author}
+          organization={recomendation.organization}
+          imageSrc={recomendation.image}
+          href={recomendation.document}
+        />
+      ))
+    }
+  </section>
 </SectionContainer>

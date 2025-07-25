@@ -27,7 +27,7 @@ const translatePath = useTranslatedPath(lang);
   <div class="max-w-7xl mx-auto flex items-center justify-end">
     <nav
       id="header-menu"
-      class="fixed w-full h-dvh inset-0 bg-[#152636]/90 xl:rounded-full xl:text-xl lg:text-xl flex flex-col items-center justify-center gap-12 xl:gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 xl:static xl:h-[initial] xl:bg-[initial] xl:flex-row xl:translate-y-[initial]"
+      class="fixed w-full h-dvh inset-0 bg-[#ABD5FF]/90 dark:bg-[#152636]/90 xl:rounded-full xl:text-xl lg:text-xl flex flex-col items-center justify-center gap-12 xl:gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 xl:static xl:h-[initial] xl:bg-[initial] xl:dark:bg-[initial] xl:flex-row xl:translate-y-[initial]"
     >
       <HeaderLink href={translatePath("/#habilidades")}>
         {t("nav.habilidades")}
@@ -43,11 +43,11 @@ const translatePath = useTranslatedPath(lang);
       </HeaderLink>
       <LanguajeSelector />
       <ThemeToogle />
-      <a href="#header-nav" class="xl:hidden absolute top-6 right-6">
+      <a href="#header-nav" class="xl:hidden absolute top-6 right-6 text-black dark:text-white" aria-label="Close button" rel="noopener noreferrer">
         <CloseIcon />
       </a>
     </nav>
-    <a href="#header-menu" class="xl:hidden"><MenuIcon /></a>
+    <a href="#header-menu" class="xl:hidden text-black dark:text-white" aria-label="Burger menu button" rel="noopener noreferrer"><MenuIcon /></a>
   </div>
 </header>
 

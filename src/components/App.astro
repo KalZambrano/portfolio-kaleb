@@ -13,7 +13,7 @@ const { currentLocale } = Astro
 const i18n = getI18N({currentLocale})
 ---
 
-<Layout title=`${i18n.SEO_TITLE_1}`>
+<Layout title=`${i18n.SEO_TITLE_1}` description=`${i18n.SEO_DESCRIPTION}` keywords={`${i18n.SEO_KEYWORDS}`}>
 	<Introduction/>
 	<Experience/>
 	<Skills/>

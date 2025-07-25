@@ -58,7 +58,9 @@ const { image, title, description, github, url } = Astro.props;
 const { tecs } = Astro.props as { tecs: Tec[] };
 ---
 
-<article class="border bg-white/80 dark:bg-gray-950/80 border-gray-400 dark:border-gray-700 rounded-2xl w-full group transition-colors ease-in-out">
+<article
+  class="border bg-white dark:bg-gray-950/80 border-gray-400 dark:border-gray-700 rounded-2xl w-full group transition-colors ease-in-out"
+>
   <div
     class="rounded-t-2xl"
     style="mask-image: linear-gradient(black 70%, transparent);"
@@ -87,14 +89,28 @@ const { tecs } = Astro.props as { tecs: Tec[] };
       <ul class="flex gap-2">
         {
           github ? (
-            <a target="_blank" href={github}>
-              <GitHubIcon class="size-9 bg-gray-600/15 p-1.5 rounded-md" />
-            </a>
+            <li>
+              <a
+                target="_blank"
+                href={github}
+                aria-label={`${title} Github Repo`}
+                rel="noopener noreferrer"
+              >
+                <GitHubIcon class="size-9 bg-gray-600/15 p-1.5 rounded-md" />
+              </a>
+            </li>
           ) : null
         }
-        <a target="_blank" href={url}>
-          <RedirectIcon class="size-9 bg-gray-600/15 p-1.5 rounded-md" />
-        </a>
+        <li>
+          <a
+            target="_blank"
+            href={url}
+            aria-label={`${title} Preview`}
+            rel="noopener noreferrer"
+          >
+            <RedirectIcon class="size-9 bg-gray-600/15 p-1.5 rounded-md" />
+          </a>
+        </li>
       </ul>
     </div>
   </div>
