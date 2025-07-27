@@ -1,0 +1,19 @@
+{
+  "experience": [
+    {
+      "title": {
+        "en": "Junior Web Developer",
+        "es": "Desarrollador Web Jr."
+      },
+      "company": "Neon House Led",
+      "description": {
+        "en": "Developed RESTful APIs with Laravel and implemented dynamic pages with Blade. Led team coordinating code and monthly deployments on Hostinger with SEO best practices.",
+        "es": "Desarrollé APIs RESTful con Laravel e implementé páginas dinámicas con Blade. Lideré equipo coordinando código y despliegues mensuales en Hostinger con buenas prácticas SEO."
+      },
+      "time": {
+        "en": "March - June 2025",
+        "es": "Marzo - Junio 2025"
+      }
+    }
+  ]
+}
