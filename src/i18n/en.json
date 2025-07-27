@@ -23,5 +23,10 @@
         "RECOMENDATIONS_SUBTITLE": "What have I excelled at?",
         "RECOMENDATIONS_TIP_MOBILE": "(Tap to view)"
     },
+    "ABOUTME":{
+        "TITLE": "About me",
+        "SUBTITLE": "Who am I?",
+        "DESCRIPTION": "description"
+    },
     "FOOTER_TITLE": "Made with ❤️ by"
 }

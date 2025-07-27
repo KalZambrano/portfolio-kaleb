@@ -23,5 +23,10 @@
         "RECOMENDATIONS_SUBTITLE": "¿En qué he destacado?",
         "RECOMENDATIONS_TIP_MOBILE": "(Tap para ver)"
     },
+    "ABOUTME":{
+        "TITLE": "Sobre mí",
+        "SUBTITLE": "¿Quién soy?",
+        "DESCRIPTION": "description"
+    },
     "FOOTER_TITLE": "Hecho con ❤️ por"
 }

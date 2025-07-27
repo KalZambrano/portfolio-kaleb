@@ -1,0 +1,74 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<SectionContainer
+  id="sobremi"
+  title={i18n.ABOUTME.TITLE}
+  subtitle={i18n.ABOUTME.SUBTITLE}
+>
+  <article
+    class="max-w-5xl mx-auto flex flex-col md:flex-row md:gap-20 gap-12 justify-between items-center transition-colors"
+  >
+    <div
+      class="[&>p]:mb-4 [&>p>strong]:text-cyan-500 dark:[&>p>strong]:text-cyan-200 [&>p>strong]:font-normal [&>p>strong]:font-mono md:order-1 order-2"
+    >
+      {
+        currentLocale === "es" ? (
+          <p>
+              Me llamo <strong>Kaleb Nahim</strong>, pero mis amigos me llaman
+              Kal. Soy desarrollador web con un fuerte enfoque en{" "}
+              <strong>frontend</strong>y actualmente expandiendo mis
+              conocimientos en backend. Me caracterizo por ser{" "}
+              <strong>resiliente, enfocado y carismático</strong>.
+            </p>
+            <p>
+              Me apasiona crear{" "}
+              <strong>interfaces intuitivas y funcionales</strong>. Llevo{" "}
+              <strong>2 años de aprendizaje autodidacta</strong> y recientemente
+              completé 3 meses de prácticas pre-profesionales donde{" "}
+              <strong>lideré un equipo de desarrollo</strong>.
+            </p>
+            <p>
+              Mi objetivo es aplicar mis habilidades en un{" "}
+              <strong>entorno profesional desafiante</strong>, contribuir{" "}
+              <strong>proyectos innovadores</strong> y seguir creciendo con las
+              tecnologías emergentes.
+            </p>
+        ) : (
+          <p>
+              My name is <strong>Kaleb Nahim</strong>, but my friends call me
+              Kal. I'm a web developer with a strong focus on{" "}
+              <strong>frontend</strong>, and I'm currently expanding my
+              knowledge in backend development. I'm known for being{" "}
+              <strong>resilient, focused, and charismatic</strong>.
+            </p>
+            <p>
+              I'm passionate about creating{" "}
+              <strong>intuitive and functional interfaces</strong>. I've been{" "}
+              <strong>self-learning for 2 years</strong> and recently completed
+              a 3-month pre-professional internship where I{" "}
+              <strong>led a development team</strong>.
+            </p>
+            <p>
+              My goal is to apply my skills in a{" "}
+              <strong>challenging professional environment</strong>, contribute
+              to <strong>innovative projects</strong>, and continue growing with
+              emerging technologies.
+            </p>
+        )
+      }
+    </div>
+
+    <img
+      class="size-64 ring-1 ring-gray-400/70 dark:ring-gray-200/70 rounded-3xl p-1 bg-gray-300/60 dark:bg-gray-500/60 rotate-3 md:order-2 order-1 transition-colors"
+      src="/profile.webp"
+      alt="Kaleb Zambrano Image"
+    />
+  </article>
+</SectionContainer>
