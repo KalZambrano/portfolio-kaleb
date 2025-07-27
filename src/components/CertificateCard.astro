@@ -1,8 +1,15 @@
 ---
 import MaximizeIcon from "@/components/icons/Maximize.astro";
 
-const { imageSrc, organization, title, href } = Astro.props;
-const { skills } = Astro.props as { skills: string[] };
+interface Props {
+  imageSrc: string,
+  organization: string,
+  title: string,
+  href: string,
+  skills: string[]
+}
+
+const { imageSrc, organization, title, href, skills } = Astro.props;
 ---
 
 <article

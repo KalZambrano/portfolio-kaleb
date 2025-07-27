@@ -2,6 +2,13 @@
 import MaximizeIcon from "@/components/icons/Maximize.astro";
 import GlareHover from "y/GlareHover/GlareHover";
 
+interface Props {
+  imageSrc: string,
+  organization: string,
+  author: string,
+  href: string
+}
+
 const { imageSrc, organization, author, href } = Astro.props;
 ---
 
