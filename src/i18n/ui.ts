@@ -23,12 +23,14 @@ export const showDefaultLang = false;
 
 export const ui = {
 	es: {
+		'nav.experiencia': 'Experencia',
 		'nav.habilidades': 'Habilidades',
 		'nav.proyectos': 'Proyectos',
 		'nav.certificados': 'Certificados',
 		'nav.sobremi': 'Sobre mí',
 	},
 	en: {
+		'nav.experiencia': 'Experience',
 		'nav.habilidades': 'Skills',
 		'nav.proyectos': 'Projects',
 		'nav.certificados': 'Certificates',

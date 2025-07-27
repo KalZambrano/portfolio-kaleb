@@ -10,7 +10,7 @@ const i18n = getI18N({ currentLocale });
 
 const experience = experienceData.experience
 ---
-<SectionContainer title={i18n.EXPERIENCE.EXPERIENCE_TITLE} subtitle={i18n.EXPERIENCE.EXPERIENCE_SUBTITLE}>
+<SectionContainer id="experiencia" title={i18n.EXPERIENCE.EXPERIENCE_TITLE} subtitle={i18n.EXPERIENCE.EXPERIENCE_SUBTITLE}>
     <ol class="mt-16 max-w-4xl mx-auto">
         {
             experience.map(({title, company, description, time})=>(
