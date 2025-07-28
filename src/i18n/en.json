@@ -2,9 +2,16 @@
     "SEO_TITLE_1": "Kaleb Zambrano's Portfolio | Junior Web Developer and Programmer",
     "SEO_DESCRIPTION": "Kaleb Zambrano - Web Developer specialized in modern web applications and websites. Unique designs, intuitive interfaces and digital experiences that convert visitors into clients.",
     "SEO_KEYWORDS":"web developer, web development, modern websites, web applications, responsive design, UI/UX design, frontend developer, custom websites, professional web design, mobile-friendly websites, React developer, JavaScript developer, HTML, CSS, user interface design, website optimization, Kaleb Zambrano, kaleb, zambrano, kaleb zambrano",
-    "EXPERIENCES":{
-        "EXPERIENCES_TITLE": "Projects",
-        "EXPERIENCES_SUBTITLE": "What I've worked on?"
+    "HERO_PRESENTATION": "Hey! I'm Kaleb Zambrano",
+    "HERO_JOB":"Full-Stack Web Developer",
+    "HERO_BUTTON": "Open to Work",
+    "EXPERIENCE": {
+        "EXPERIENCE_TITLE": "Experience",
+        "EXPERIENCE_SUBTITLE": "Where have I worked?"
+    },
+    "PROJECTS":{
+        "PROJECTS_TITLE": "Projects",
+        "PROJECTS_SUBTITLE": "What have I worked on?"
     },
     "SKILLS":{
         "SKILLS_TITLE": "Skills",
@@ -18,6 +25,11 @@
         "RECOMENDATIONS_TITLE": "Letters of Recommendation",
         "RECOMENDATIONS_SUBTITLE": "What have I excelled at?",
         "RECOMENDATIONS_TIP_MOBILE": "(Tap to view)"
+    },
+    "ABOUTME":{
+        "TITLE": "About me",
+        "SUBTITLE": "Who am I?",
+        "DESCRIPTION": "description"
     },
     "FOOTER_TITLE": "Made with ❤️ by"
 }

@@ -1,6 +1,15 @@
 ---
 import RedirectIcon from "@/components/icons/Redirect.astro";
-import GitHubIcon from "./icons/GitHub.astro";
+import GitHub from "@/assets/social/github.svg"
+
+interface Props{
+  image: string,
+  title: string,
+  description: string,
+  github?: string,
+  url: string
+  tecs: Tec[]
+}
 
 type Tec = "Laravel" | "Astro" | "JS" | "Tailwind" | "React" | "TS";
 
@@ -54,8 +63,7 @@ const generateTecIconHTML = (tec: Tec): string => {
   `;
 };
 
-const { image, title, description, github, url } = Astro.props;
-const { tecs } = Astro.props as { tecs: Tec[] };
+const { image, title, description, github, url, tecs } = Astro.props;
 ---
 
 <article
@@ -96,7 +104,7 @@ const { tecs } = Astro.props as { tecs: Tec[] };
                 aria-label={`${title} Github Repo`}
                 rel="noopener noreferrer"
               >
-                <GitHubIcon class="size-9 bg-gray-600/15 p-1.5 rounded-md" />
+                <GitHub class="size-9 bg-gray-600/15 hover:bg-gray-600/40 p-1.5 rounded-md transition-colors" />
               </a>
             </li>
           ) : null
@@ -108,7 +116,7 @@ const { tecs } = Astro.props as { tecs: Tec[] };
             aria-label={`${title} Preview`}
             rel="noopener noreferrer"
           >
-            <RedirectIcon class="size-9 bg-gray-600/15 p-1.5 rounded-md" />
+            <RedirectIcon class="size-9 bg-gray-600/15 hover:bg-gray-600/40 p-1.5 rounded-md transition-colors" />
           </a>
         </li>
       </ul>

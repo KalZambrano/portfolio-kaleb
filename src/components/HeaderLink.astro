@@ -3,8 +3,27 @@ const { href } = Astro.props;
 ---
 
 <a
-  class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 text_glowing text-black dark:text-white"
+  class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 text-black dark:text-white"
   href={href}
 >
   <slot />
 </a>
+
+<style>
+  @media (width >= 80rem) {
+    a {
+      animation: text-shadown 1s linear both;
+      animation-timeline: scroll();
+      animation-range: 0 100px;
+    }
+  }
+
+  @keyframes text-shadown {
+    0% {
+      text-shadow: transparent;
+    }
+    100% {
+      text-shadow: 1px 1px 15px #fff;
+    }
+  }
+</style>

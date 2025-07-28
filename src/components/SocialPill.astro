@@ -1,0 +1,19 @@
+---
+import { type Socials } from "@/types/network";
+
+const { name, image, url, label } = Astro.props as Socials;
+---
+
+<li class="relative flex text-neutral-500 dark:text-neutral-400 w-fit group">
+  <a
+    class="hover:scale-110 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all"
+    rel="noopener noreferrer"
+    href={url}
+    target="_blank"
+    aria-label={label}><image.logo class="size-10" /></a
+  >
+  <span
+    class="absolute top-1/2 left-full ml-4 -translate-y-1/2 whitespace-nowrap dark:bg-neutral-800 bg-neutral-200 after:bg-neutral-200 dark:after:bg-neutral-800 text-sm px-3 py-1.5 rounded-lg opacity-0 translate-x-0 group-hover:opacity-80 group-hover:-translate-x-2 transition-all duration-200 pointer-events-none z-40"
+    >{name}</span
+  >
+</li>

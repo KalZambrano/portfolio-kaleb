@@ -2,9 +2,16 @@
     "SEO_TITLE_1": "Portfolio de Kaleb Zambrano | Desarrollador y Programador Web Jr.",
     "SEO_DESCRIPTION": "Kaleb Zambrano - Desarrollador Web especializado en aplicaciones y sitios web modernos. Me encanta desarrollar diseños únicos, interfaces intuitivas y experiencias digitales que convierten visitantes en clientes.",
     "SEO_KEYWORDS":"desarrollador web, desarrollo web, sitios web modernos, aplicaciones web, diseño responsivo, diseño UI/UX, desarrollador frontend, sitios web personalizados, diseño web profesional, sitios web móviles, desarrollador React, desarrollador JavaScript, HTML, CSS, diseño de interfaces, optimización web, Kaleb Zambrano, kaleb, zambrano, kaleb zambrano",
-    "EXPERIENCES":{
-        "EXPERIENCES_TITLE": "Proyectos",
-        "EXPERIENCES_SUBTITLE": "¿En qué he trabajado?"
+    "HERO_PRESENTATION": "Hey, Soy Kaleb Zambrano",
+    "HERO_JOB":"Desarrollador Web Full-Stack",
+    "HERO_BUTTON": "Disponible para trabajar",
+    "EXPERIENCE": {
+        "EXPERIENCE_TITLE": "Experiencia",
+        "EXPERIENCE_SUBTITLE": "¿Dónde he trabajado?"
+    },
+    "PROJECTS":{
+        "PROJECTS_TITLE": "Proyectos",
+        "PROJECTS_SUBTITLE": "¿En qué he trabajado?"
     },
     "SKILLS":{
         "SKILLS_TITLE": "Habilidades",
@@ -18,6 +25,11 @@
         "RECOMENDATIONS_TITLE": "Cartas de Recomendación",
         "RECOMENDATIONS_SUBTITLE": "¿En qué he destacado?",
         "RECOMENDATIONS_TIP_MOBILE": "(Tap para ver)"
+    },
+    "ABOUTME":{
+        "TITLE": "Sobre mí",
+        "SUBTITLE": "¿Quién soy?",
+        "DESCRIPTION": "description"
     },
     "FOOTER_TITLE": "Hecho con ❤️ por"
 }
