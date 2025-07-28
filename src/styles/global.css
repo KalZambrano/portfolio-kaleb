@@ -19,10 +19,10 @@
 }
 
 @utility text-glowing-cyan {
-    text-shadow: 1px 1px 4px oklch(60.9% 0.126 221.723);
+    text-shadow: 1px 1px 10px oklch(60.9% 0.126 221.723);
 }
 @utility glowing-cyan-dark {
-    text-shadow: 1px 1px 4px oklch(78.9% 0.154 211.53);
+    text-shadow: 1px 1px 10px oklch(78.9% 0.154 211.53);
 }
 
 @view-transition{

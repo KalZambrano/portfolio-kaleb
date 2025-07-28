@@ -1,5 +1,7 @@
 ---
 import SectionContainer from "./SectionContainer.astro";
+import MailIcon from "@/assets/social/mail-plus.svg"
+import CopyIcon from "@/assets/tool/copy.svg"
 
 import { getI18N } from "@/i18n";
 
@@ -13,14 +15,14 @@ const i18n = getI18N({ currentLocale });
   subtitle={i18n.ABOUTME.SUBTITLE}
 >
   <article
-    class="max-w-5xl mx-auto flex flex-col md:flex-row md:gap-20 gap-12 justify-between items-center transition-colors"
+    class="max-w-5xl mx-auto flex flex-col md:flex-row md:gap-8 gap-12 items-center transition-colors"
   >
     <div
       class="[&>p]:mb-4 [&>p>strong]:text-cyan-500 dark:[&>p>strong]:text-cyan-200 [&>p>strong]:font-normal [&>p>strong]:font-mono md:order-1 order-2"
     >
       {
         currentLocale === "es" ? (
-          <p>
+            <p>
               Me llamo <strong>Kaleb Nahim</strong>, pero mis amigos me llaman
               Kal. Soy desarrollador web con un fuerte enfoque en{" "}
               <strong>frontend </strong>y actualmente expandiendo mis
@@ -41,7 +43,7 @@ const i18n = getI18N({ currentLocale });
               tecnologías emergentes.
             </p>
         ) : (
-          <p>
+            <p>
               My name is <strong>Kaleb Nahim</strong>, but my friends call me
               Kal. I'm a web developer with a strong focus on{" "}
               <strong>frontend</strong>, and I'm currently expanding my
@@ -63,12 +65,60 @@ const i18n = getI18N({ currentLocale });
             </p>
         )
       }
+      <div class="flex flex-col md:flex-row justify-center md:justify-start items-center gap-8 mt-8">
+        <a 
+        class="flex gap-2 bg-cyan-500 text-lg text-white py-2 px-4 rounded-2xl items-center hover:scale-110 transition-all" 
+        href="mailto:kalebzambranob28@gmail.com"
+        style="box-shadow: 1px 1px 10px cyan;">
+          <MailIcon/>
+          Email
+        </a>
+        <span class="flex items-center gap-2 hover:scale-103 cursor-pointer transition-all text-base md:text-lg font-bold justify-center text-center" 
+              id="copyButton" 
+              data-email="kalebzambrano@outlook.com">
+          <span id="emailText">kalebzambrano@outlook.com</span>
+          <CopyIcon/>
+        </span>
+      </div>
     </div>
 
     <img
-      class="size-64 ring-1 ring-gray-400/70 dark:ring-gray-200/70 rounded-3xl p-1 bg-gray-300/60 dark:bg-gray-500/60 rotate-3 md:order-2 order-1 transition-colors"
+      class="size-64 aspect-square ring-1 ring-gray-400/70 dark:ring-gray-200/70 rounded-3xl p-1 bg-gray-300/60 dark:bg-gray-500/60 rotate-3 md:order-2 order-1 transition-colors"
       src="/profile.webp"
       alt="Kaleb Zambrano Image"
     />
   </article>
 </SectionContainer>
+
+<script>
+  const copyButton = document.getElementById("copyButton")
+  const emailText = document.getElementById("emailText")
+  
+  copyButton?.addEventListener('click', async () => {
+    if (copyButton && emailText !== null){
+      try {
+        const email = copyButton.dataset.email
+
+        if (typeof email === 'string'){
+          await navigator.clipboard.writeText(email)
+        }
+
+        const originalWidth = emailText.offsetWidth
+        const originalText = emailText.textContent
+
+        emailText.style.width = originalWidth + 'px'
+        emailText.textContent = "✔️ ¡Copiado!"
+        
+        setTimeout(() => {
+          emailText.textContent = originalText
+          emailText.style.width = 'auto'
+        }, 2000)
+        
+      } catch (error) {
+        console.error('Error al copiar:', error)
+        emailText.textContent = "❌ Error"
+      }
+    }
+    
+  })
+</script>

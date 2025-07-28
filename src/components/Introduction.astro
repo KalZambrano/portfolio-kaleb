@@ -15,7 +15,7 @@ const i18n = getI18N({ currentLocale });
 
 <section class="flex flex-col md:flex-row pt-36 mx-8">
   <aside class="mt-12 md:mt-2 md:mr-20 order-2 md:order-1">
-    <ul class="flex md:flex-col flex-row gap-8 justify-center">
+    <ul class="flex md:flex-col flex-row gap-2 md:gap-8 justify-center">
       {
         SOCIAL.map(({ name, url, image, label }) => (
           <SocialPill image={image} name={name} url={url} label={label} />
