@@ -18,6 +18,13 @@
     text-shadow: 1px 1px 15px #80FFD8;
 }
 
+@utility text-glowing-cyan {
+    text-shadow: 1px 1px 4px oklch(60.9% 0.126 221.723);
+}
+@utility glowing-cyan-dark {
+    text-shadow: 1px 1px 4px oklch(78.9% 0.154 211.53);
+}
+
 @view-transition{
     navigation: auto
 }
