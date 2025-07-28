@@ -33,6 +33,15 @@
       }
     },
     {
+      "name": "React",
+      "icon": "react_light.svg",
+      "iconDark": "react_dark.svg",
+      "level": {
+        "es": "Intermedio",
+        "en": "Middle"
+      }
+    },
+    {
       "name": "Python",
       "icon": "python.svg",
       "level": {
