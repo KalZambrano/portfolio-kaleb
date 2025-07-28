@@ -1,6 +1,6 @@
 ---
 import RedirectIcon from "@/components/icons/Redirect.astro";
-import GitHubIcon from "./icons/GitHub.astro";
+import GitHub from "@/assets/social/github.svg"
 
 interface Props{
   image: string,
@@ -104,7 +104,7 @@ const { image, title, description, github, url, tecs } = Astro.props;
                 aria-label={`${title} Github Repo`}
                 rel="noopener noreferrer"
               >
-                <GitHubIcon class="size-9 bg-gray-600/15 hover:bg-gray-600/40 p-1.5 rounded-md transition-colors" />
+                <GitHub class="size-9 bg-gray-600/15 hover:bg-gray-600/40 p-1.5 rounded-md transition-colors" />
               </a>
             </li>
           ) : null
