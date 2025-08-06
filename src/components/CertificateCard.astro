@@ -29,7 +29,7 @@ const { imageSrc, organization, title, href, skills } = Astro.props;
   <div class="flex justify-between items-center gap-x-2">
     <div class="flex flex-wrap gap-3">
       {
-        skills ? (
+        skills && skills.length > 0 ? (
           skills.map((skill) => (
             <span class="rounded-full px-3 py-1 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 transition-colors ease-in-out">
               {skill}
@@ -45,6 +45,7 @@ const { imageSrc, organization, title, href, skills } = Astro.props;
     <a
       class="flex gap-x-1 items-center text-cyan-600"
       href={`/documents/${href}`}
+      target="_blank"
     >
       View
       <MaximizeIcon class="size-5" />
