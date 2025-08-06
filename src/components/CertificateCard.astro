@@ -2,34 +2,43 @@
 import MaximizeIcon from "@/components/icons/Maximize.astro";
 
 interface Props {
-  imageSrc: string,
-  organization: string,
-  title: string,
-  href: string,
-  skills: string[]
+  imageSrc: string;
+  organization: string;
+  title: string;
+  href: string;
+  skills: string[];
 }
 
 const { imageSrc, organization, title, href, skills } = Astro.props;
+
+// Generar ID único y seguro
+const safeId = title.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase();
 ---
 
 <article
   class="border bg-white dark:bg-gray-950/80 border-gray-400 dark:border-gray-700 rounded-2xl p-4 hover:scale-105 transition-all flex flex-col justify-between"
 >
+  <!-- Modal -->
+
+  <!-- Info -->
   <div class="flex items-center gap-4 mb-3">
     <img
       class="w-16 h-fit rounded-xl"
       src={`/${imageSrc}`}
       alt={`${organization} logo`}
+      loading="lazy"
     />
-    <span>
+    <div>
       <h2 class="font-bold text-xl">{title}</h2>
       <h3 class="text-green-600 dark:text-green-400">{organization}</h3>
-    </span>
+    </div>
   </div>
+
+  <!-- Skills + Button -->
   <div class="flex justify-between items-center gap-x-2">
     <div class="flex flex-wrap gap-3">
       {
-        skills ? (
+        skills && skills.length > 0 ? (
           skills.map((skill) => (
             <span class="rounded-full px-3 py-1 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 transition-colors ease-in-out">
               {skill}
@@ -42,12 +51,95 @@ const { imageSrc, organization, title, href, skills } = Astro.props;
         )
       }
     </div>
-    <a
-      class="flex gap-x-1 items-center text-cyan-600"
-      href={`/documents/${href}`}
+    <button
+      class="flex gap-x-1 items-center text-cyan-600 cursor-pointer transition-colors focus:ring-2 focus:ring-cyan-500 focus:outline-none rounded-md px-2 py-1"
+      id={`open-button-${safeId}`}
+      aria-label={`View ${title} certificate`}
+      type="button"
     >
       View
       <MaximizeIcon class="size-5" />
-    </a>
+    </button>
   </div>
 </article>
+<div
+  class="opacity-0 pointer-events-none fixed inset-0 z-50 flex justify-center items-center backdrop-blur-md bg-black/40 transition-all duration-300"
+  id={`certificate-modal-${safeId}`}
+  role="dialog"
+  aria-labelledby={`modal-title-${safeId}`}
+  aria-modal="true"
+>
+  <div class="relative w-full h-full p-4 sm:p-6 lg:p-8">
+    <h2 id={`modal-title-${safeId}`} class="sr-only">
+      {title} - {organization}
+    </h2>
+
+    <!-- Header del modal con título e info -->
+    <div class="flex justify-between items-center mb-4">
+      <div class="text-white">
+        <h3 class="text-xl font-bold">{title}</h3>
+        <p class="text-gray-300">{organization}</p>
+      </div>
+      <button
+        class="bg-white/20 backdrop-blur-sm border border-white/30 text-white rounded-full p-3 hover:bg-white/30 hover:scale-110 transition-all focus:ring-2 focus:ring-white/50 focus:outline-none cursor-pointer"
+        id={`close-button-${safeId}`}
+        aria-label={`Close ${title} certificate modal`}
+        type="button"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Contenedor del documento -->
+    <div
+      class="w-full h-[calc(100%-5rem)] rounded-xl overflow-hidden shadow-2xl"
+    >
+      <iframe
+        class="w-full h-full border-0"
+        src={`/documents/${href}`}
+        title={`Certificate: ${title}`}
+        loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ safeId }}>
+  // Usar define:vars para pasar variables del servidor al cliente
+  const modal = document.getElementById(`certificate-modal-${safeId}`);
+  const openButton = document.getElementById(`open-button-${safeId}`);
+  const closeButton = document.getElementById(`close-button-${safeId}`);
+
+  if (openButton && closeButton && modal) {
+    
+    const openModal = () => {
+      modal.classList.remove("opacity-0", "pointer-events-none");
+      modal.classList.add("opacity-100", "pointer-events-auto");
+      document.body.classList.add("overflow-hidden");
+
+      closeButton?.focus();
+    };
+
+    const closeModal = () => {
+      modal.classList.remove("opacity-100", "pointer-events-auto");
+      modal.classList.add("opacity-0", "pointer-events-none");
+      document.body.classList.remove("overflow-hidden");
+
+      openButton?.focus();
+    };
+
+    // Event listeners
+    openButton.addEventListener("click", openModal);
+    closeButton.addEventListener("click", closeModal);
+  }
+</script>
