@@ -133,6 +133,14 @@
       }
     },
     {
+      "name": "Supabase",
+      "icon": "supabase.svg",
+      "level": {
+        "es": "Básico",
+        "en": "Basic"
+      }
+    },
+    {
       "name": "Git",
       "icon": "git.svg",
       "level": {
