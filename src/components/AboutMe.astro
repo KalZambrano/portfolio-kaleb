@@ -69,16 +69,19 @@ const i18n = getI18N({ currentLocale });
         <a 
         class="flex gap-2 bg-cyan-500 text-lg text-white py-2 px-4 rounded-2xl items-center hover:scale-110 transition-all" 
         href="mailto:kalebzambranob28@gmail.com"
+        aria-label="Enviar correo a Kaleb"
         style="box-shadow: 1px 1px 10px cyan;">
-          <MailIcon/>
+          <MailIcon aria-hidden="true"/>
           Email
         </a>
-        <span class="flex items-center gap-2 hover:scale-103 cursor-pointer transition-all text-base md:text-lg font-bold justify-center text-center" 
+        <button class="flex items-center gap-2 hover:scale-103 cursor-pointer transition-all text-base md:text-lg font-bold justify-center text-center" 
               id="copyButton" 
+              type="button"
+              aria-label="Copiar correo al portapapeles"
               data-email="kalebzambrano@outlook.com">
           <span id="emailText">kalebzambrano@outlook.com</span>
-          <CopyIcon/>
-        </span>
+          <CopyIcon aria-hidden="true"/>
+        </button>
       </div>
     </div>
 
@@ -86,6 +89,8 @@ const i18n = getI18N({ currentLocale });
       class="size-64 aspect-square ring-1 ring-gray-400/70 dark:ring-gray-200/70 rounded-3xl p-1 bg-gray-300/60 dark:bg-gray-500/60 rotate-3 md:order-2 order-1 transition-colors object-cover"
       src="/upc.webp"
       alt="DevFest 2025 Conference"
+      loading="lazy"
+      decoding="async"
     />
   </article>
 </SectionContainer>

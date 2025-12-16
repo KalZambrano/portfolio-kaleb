@@ -58,8 +58,8 @@ const LANGUAJE_DICTIONARY: Record<
 const generateTecIconHTML = (tec: Tec): string => {
   const { color, src, srcDark, alt } = LANGUAJE_DICTIONARY[tec];
   return `
-  <img class="size-9 ${color} p-1.5 rounded-md dark:block hidden" src="${src}" alt="${alt}">
-  <img class="size-9 ${color} p-1.5 rounded-md dark:hidden block" src="${srcDark}" alt="${alt}">
+  <img class="size-9 ${color} p-1.5 rounded-md dark:block hidden" src="${src}" alt="${alt}" loading="lazy" decoding="async">
+  <img class="size-9 ${color} p-1.5 rounded-md dark:hidden block" src="${srcDark}" alt="${alt}" loading="lazy" decoding="async">
   `;
 };
 
@@ -79,6 +79,8 @@ const { image, title, description, github, url, tecs } = Astro.props;
       alt={`Imagen de dresentación del proyecto de ${title}`}
       width="2600"
       height="1240"
+      loading="lazy"
+      decoding="async"
     />
   </div>
   <div class="flex flex-col justify-between p-5 h-52">

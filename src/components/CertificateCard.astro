@@ -20,6 +20,8 @@ const { imageSrc, organization, title, href, skills } = Astro.props;
       class="w-16 h-fit rounded-xl"
       src={`/${imageSrc}`}
       alt={`${organization} logo`}
+      loading="lazy"
+      decoding="async"
     />
     <span>
       <h2 class="font-bold text-xl">{title}</h2>
@@ -46,6 +48,8 @@ const { imageSrc, organization, title, href, skills } = Astro.props;
       class="flex gap-x-1 items-center text-cyan-600"
       href={`/documents/${href}`}
       target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Open certificate ${title} from ${organization}`}
     >
       View
       <MaximizeIcon class="size-5" />

@@ -27,13 +27,14 @@ const lang = getLangFromUrl(Astro.url);
   </head>
 
   <body>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white focus:text-black focus:px-3 focus:py-2 focus:rounded-md">Saltar al contenido</a>
     <Header />
     <div
     class="absolute inset-0 -z-10 dark:bg-gray-950 bg-gray-100 dark:dots-pattern cicle-pattern transition-all ease-in-out duration-300"
     style="background-size: 20px 20px, 30px 30px, 25px 25px;
       background-position: 0 0, 10px 10px, 15px 5px;"
   />
-    <main class="max-w-6xl mx-auto text-black dark:text-white">
+    <main id="main-content" class="max-w-6xl mx-auto text-black dark:text-white" tabindex="-1">
       <slot />
     </main>
     <Footer />

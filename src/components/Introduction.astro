@@ -32,6 +32,8 @@ const i18n = getI18N({ currentLocale });
         class="rounded-full size-16"
         src="/profile.webp"
         alt="Kaleb Zambrano"
+        loading="lazy"
+        decoding="async"
       />
       <a
         target="_blank"
@@ -41,7 +43,7 @@ const i18n = getI18N({ currentLocale });
       </a>
     </div>
     <BlurText
-      client:load
+      client:idle
       text={i18n.HERO_PRESENTATION}
       delay={50}
       animateBy="words"
@@ -49,7 +51,7 @@ const i18n = getI18N({ currentLocale });
       className="text-3xl md:text-5xl font-bold mb-2"
     />
     <TextType
-      client:load
+      client:idle
       colorText="text-cyan-500 dark:text-cyan-400"
       className="text-cyan-500 dark:text-cyan-400 font-semibold text-xl md:text-3xl mb-8"
       text={[i18n.HERO_JOB]}
@@ -57,7 +59,7 @@ const i18n = getI18N({ currentLocale });
       showCursor={true}
       cursorCharacter="|"
     />
-    <AboutText client:load>
+    <AboutText client:idle>
       {
         currentLocale === "es" ? (
           <>
