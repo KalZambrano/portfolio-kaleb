@@ -166,6 +166,14 @@
       }
     },
     {
+      "name": "WebFlow",
+      "icon": "webflow.svg",
+      "level": {
+        "es": "Aprendiendo",
+        "en": "Learning"
+      }
+    },
+    {
       "name": "Clerk",
       "icon": "clerk-light.svg",
       "iconDark": "clerk-dark.svg",
