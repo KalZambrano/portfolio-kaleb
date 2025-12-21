@@ -1,0 +1,30 @@
+---
+import SkillCard from "./SkillCard.astro";
+
+import { type Skill } from "@/types/skill";
+
+interface Props {
+  skills: Skill[];
+}
+
+const { skills } = Astro.props;
+// console.log(skills);
+---
+
+<section
+  class="rounded-xl border bg-white dark:bg-gray-950/80 border-gray-400 dark:border-gray-700 p-3 cursor-default"
+>
+  <slot/>
+  <div class="flex flex-wrap justify-center gap-3">
+    {
+      skills.map((skill) => (
+        <SkillCard
+          title={skill.name}
+          level={skill.level}
+          iconSrc={skill.icon}
+          iconDark={skill.iconDark}
+        />
+      ))
+    }
+  </div>
+</section>
