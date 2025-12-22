@@ -18,6 +18,16 @@
                 "en": "English Certificate"
             },
             "document": "EF_SET_Certificate.pdf"
+        },
+        {
+            "organization": "Udemy",
+            "image": "udemy-logo.webp",
+            "job_title": {
+                "es": "Certificado de Web Frontend",
+                "en": "Web Frontend Certificate"
+            },
+            "skills": ["HTML", "CSS", "JavaScript"],
+            "document": "web-frontend-udemy.pdf"
         }
     ],
     "recomendations": [
