@@ -8,7 +8,7 @@ interface Props {
 const { title, subtitle, id } = Astro.props;
 ---
 
-<section id={id} class="py-28 mx-8 md:mx-6">
+<section id={id} data-section={id} class="py-28 mx-8 md:mx-6">
   <h2 class="text-gray-700 dark:text-gray-500 font-semibold text-lg md:text-xl mb-2">
     {title}
   </h2>
