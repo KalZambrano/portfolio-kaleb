@@ -4,36 +4,76 @@ import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import "@fontsource-variable/onest";
 import { getLangFromUrl } from "@/i18n/utils";
+// import { SOCIAL } from "@/const/social";
 
-const { title, description, keywords } = Astro.props;
+const { title, description, keywords, siteName, siteUrl, image, author } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
+
+const siteNameSafe = siteName || "Kaleb Zambrano";
+// const authorSafe = author || siteNameSafe;
+const ogImage = image || "/og-banner.webp";
+const canonical = siteUrl ? new URL(Astro.url.pathname, siteUrl).toString() : null;
+const ogLocale = lang === "en" ? "en_US" : "es_ES";
+// const ldData = {
+//   "@context": "https://schema.org",
+//   "@type": "Person",
+//   name: authorSafe,
+//   url: siteUrl || "",
+//   sameAs: SOCIAL.map((s) => s.url),
+//   image: ogImage,
+// };
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description}>
-    <meta name="keywords" content={keywords}>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f172a" />
+
     <link rel="icon" type="image/svg+xml" href="/yin-yang.svg" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/yin-yang-dark.svg"
-      media="(prefers-color-scheme: dark)"
-    />
-    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/yin-yang-dark.svg" media="(prefers-color-scheme: dark)" />
+
+    {canonical ? <link rel="canonical" href={canonical} /> : null}
+
+    <title>{title ? `${title} | ${siteNameSafe}` : siteNameSafe}</title>
+
+    {/* Open Graph */}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:site_name" content={siteNameSafe} />
+    <meta property="og:title" content={title ? `${title} | ${siteNameSafe}` : siteNameSafe} />
+    <meta property="og:description" content={description} />
+    {canonical ? <meta property="og:url" content={canonical} /> : null}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={description} />
+
+    {/* Twitter Card */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title ? `${title} | ${siteNameSafe}` : siteNameSafe} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    {/* hreflang for available languages (requires siteUrl prop) */}
+    <!-- {siteUrl ? <link rel="alternate" hrefLang="es" href={`${siteUrl}/`} /> : null}
+    {siteUrl ? <link rel="alternate" hrefLang="en" href={`${siteUrl}/en/`} /> : null} -->
+
+    <!-- {/* JSON-LD structured data */}
+    <script type="application/ld+json">{JSON.stringify(ldData)}</script> -->
   </head>
 
   <body>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white focus:text-black focus:px-3 focus:py-2 focus:rounded-md">Saltar al contenido</a>
     <Header />
     <div
     class="absolute inset-0 -z-10 dark:bg-gray-950 bg-gray-100 dark:dots-pattern cicle-pattern transition-all ease-in-out duration-300"
     style="background-size: 20px 20px, 30px 30px, 25px 25px;
       background-position: 0 0, 10px 10px, 15px 5px;"
   />
-    <main class="max-w-6xl mx-auto text-black dark:text-white">
+    <main id="main-content" class="max-w-6xl mx-auto text-black dark:text-white" tabindex="-1">
       <slot />
     </main>
     <Footer />

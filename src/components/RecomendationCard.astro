@@ -1,5 +1,5 @@
 ---
-import MaximizeIcon from "@/components/icons/Maximize.astro";
+import MaximizeIcon from "@/assets/icons/arrows-maximize.svg"
 import GlareHover from "y/GlareHover/GlareHover";
 
 interface Props {
@@ -16,7 +16,7 @@ const { imageSrc, organization, author, href } = Astro.props;
   class="border bg-white dark:bg-gray-950/80 border-gray-400 dark:border-gray-700 rounded-2xl group transition-colors ease-in-out"
 >
   <GlareHover
-    client:load
+    client:idle
     glareColor="#2dffbc"
     background="transparent"
     glareOpacity={0.3}
@@ -31,6 +31,8 @@ const { imageSrc, organization, author, href } = Astro.props;
         class="w-20 h-fit rounded-xl"
         src={`/${imageSrc}`}
         alt={`${organization} logo`}
+        loading="lazy"
+        decoding="async"
       />
       <span class="text-center">
         <h3 class="text-xl font-bold text-balance text-center">
@@ -40,7 +42,9 @@ const { imageSrc, organization, author, href } = Astro.props;
       </span>
     </div>
     <a
-    target="_blank"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`View document from ${organization}`}
       class="group-hover:opacity-100 opacity-0 transition-opacity duration-200 ease-in-out text-cyan-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       href={`/documents/${href}`}
     >

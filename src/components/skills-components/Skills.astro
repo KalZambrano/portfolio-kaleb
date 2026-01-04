@@ -1,0 +1,103 @@
+---
+import skillsData from "@/data/skills.json";
+import SectionContainer from "../SectionContainer.astro";
+import SkillSection from "./SkillSection.astro";
+import { getI18N } from "@/i18n";
+
+import FrontendIcon from "@/assets/icons/device-imac.svg"
+import BackendIcon from "@/assets/icons/settings.svg"
+import NoCodeIcon from "@/assets/icons/code-off.svg"
+import DatabaseIcon from "@/assets/icons/database.svg"
+import CloudIcon from "@/assets/icons/cloud.svg"
+import ToolsIcon from "@/assets/icons/tool.svg"
+import FundamentalsIcon from "@/assets/icons/puzzle.svg"
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const skills = skillsData.skills;
+
+const firstRow = [
+  {
+    title: "Fundamentals",
+    data: skills.fundamentals,
+    icon: FundamentalsIcon,
+  },
+  {
+    title: "Frontend",
+    data: skills.frontend,
+    icon: FrontendIcon,
+  },
+  {
+    title: "Backend",
+    data: skills.backend,
+    icon: BackendIcon,
+  },
+  {
+    title: "Database",
+    data: skills.database,
+    icon: DatabaseIcon,
+  },
+  {
+    title: "CMS & No Code",
+    data: skills.cms,
+    icon: NoCodeIcon
+  },
+];
+const secondRow = [
+  {
+    title: "Tools",
+    data: skills.tools,
+    icon: ToolsIcon
+  },
+  {
+    title: "Deploy & Cloud",
+    data: skills.cloud,
+    icon: CloudIcon
+  },
+];
+---
+
+<SectionContainer
+  id="habilidades"
+  title={i18n.SKILLS.SKILLS_TITLE}
+  subtitle={i18n.SKILLS.SKILLS_SUBTITLE}
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      firstRow.map((skills) => (
+        <SkillSection skills={skills.data} >
+          <h2 class="text-xl font-bold px-5 py-2 flex items-center gap-x-3">
+            <skills.icon />
+            {skills.title}
+          </h2>
+        </SkillSection>
+      ))
+    }
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+    {
+      secondRow.map((skills) => (
+        <SkillSection skills={skills.data} >
+          <h2 class="text-xl font-bold px-5 py-2 flex items-center gap-x-3">
+            <skills.icon />
+            {skills.title}
+          </h2>
+        </SkillSection>
+      ))
+    }
+  </div>
+
+  <!-- <section class="flex flex-wrap gap-6 justify-center">
+    {
+      skills.map((skill) => (
+        <SkillCard
+          title={skill.name}
+          level={skill.level[currentLocale]}
+          iconSrc={skill.icon}
+          iconDark={skill.iconDark}
+        />
+      ))
+    }
+  </section> -->
+</SectionContainer>

@@ -1,5 +1,5 @@
 ---
-import MaximizeIcon from "@/components/icons/Maximize.astro";
+import MaximizeIcon from "@/assets/icons/arrows-maximize.svg"
 
 interface Props {
   imageSrc: string;
@@ -27,6 +27,7 @@ const safeId = title.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase();
       src={`/${imageSrc}`}
       alt={`${organization} logo`}
       loading="lazy"
+      decoding="async"
     />
     <div>
       <h2 class="font-bold text-xl">{title}</h2>
@@ -51,11 +52,12 @@ const safeId = title.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase();
         )
       }
     </div>
-    <button
-      class="flex gap-x-1 items-center text-cyan-600 cursor-pointer transition-colors focus:ring-2 focus:ring-cyan-500 focus:outline-none rounded-md px-2 py-1"
-      id={`open-button-${safeId}`}
-      aria-label={`View ${title} certificate`}
-      type="button"
+    <a
+      class="flex gap-x-1 items-center text-cyan-600"
+      href={`/documents/${href}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Open certificate ${title} from ${organization}`}
     >
       View
       <MaximizeIcon class="size-5" />

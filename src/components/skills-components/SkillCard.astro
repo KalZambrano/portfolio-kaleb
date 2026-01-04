@@ -1,0 +1,25 @@
+---
+import { type Level } from "@/types/skill"
+
+interface Props {
+    iconSrc: string,
+    iconDark?: string,
+    title: string,
+    level?: Level
+}
+
+const { currentLocale } = Astro;
+const {iconSrc, iconDark, title, level} = Astro.props
+---
+<article class="w-[136px] h-fit rounded-xl flex flex-col items-center gap-3 p-3 cursor-default hover:scale-110 transition-all ease-in-out">
+    <h4 class="font-bold">{title}</h4>
+    {
+        iconDark
+        ? <img class="size-16 dark:hidden block" src={`/icons/${iconSrc}`} alt={`${title} icon`} loading="lazy" decoding="async"/>
+            <img class="size-16 dark:block hidden" src={`/icons/dark/${iconDark}`} alt={`${title} dark icon`} loading="lazy" decoding="async"/>
+        : <img class="size-16" src={`/icons/${iconSrc}`} alt={`${title} icon`} loading="lazy" decoding="async"/>
+    }
+    {
+        (level && currentLocale) && <span class="rounded-full text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-3 py-1 font-light text-sm transition-colors ease-in-out">{level[currentLocale]}</span>
+    } 
+</article>
