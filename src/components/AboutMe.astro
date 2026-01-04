@@ -1,7 +1,6 @@
 ---
 import SectionContainer from "./SectionContainer.astro";
 import MailIcon from "@/assets/social/mail-plus.svg"
-import CopyIcon from "@/assets/tool/copy.svg"
 import { CopyButton } from "./animate-ui/components/buttons/copy";
 
 import { getI18N } from "@/i18n";
@@ -77,7 +76,7 @@ const i18n = getI18N({ currentLocale });
         </a>
         <span class="flex items-center gap-2  cursor-default hover:scale-103 transition-all text-base md:text-lg font-bold justify-center text-center"  id="emailText">
           kalebzambranob28@gmail.com
-          <CopyButton className="cursor-pointer" content="kalebzambrano@outlook.com" client:idle/>
+          <CopyButton aria-label="Copiar correo" className="cursor-pointer" content="kalebzambrano@outlook.com" client:idle/>
         </span>
       </div>
     </div>
