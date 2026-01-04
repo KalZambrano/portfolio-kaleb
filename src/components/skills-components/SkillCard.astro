@@ -12,7 +12,7 @@ const { currentLocale } = Astro;
 const {iconSrc, iconDark, title, level} = Astro.props
 ---
 <article class="w-[136px] h-fit rounded-xl flex flex-col items-center gap-3 p-3 cursor-default hover:scale-110 transition-all ease-in-out">
-    <h4 class="font-bold">{title}</h4>
+    <span class="font-bold">{title}</span>
     {
         iconDark
         ? <img class="size-16 dark:hidden block" src={`/icons/${iconSrc}`} alt={`${title} icon`} loading="lazy" decoding="async"/>
