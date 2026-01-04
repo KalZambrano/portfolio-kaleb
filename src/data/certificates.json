@@ -28,6 +28,16 @@
             },
             "skills": ["HTML", "CSS", "JavaScript"],
             "document": "web-frontend-udemy.pdf"
+        },
+        {
+            "organization": "Anthropic",
+            "image": "anthropic-logo.webp",
+            "job_title": {
+                "es": "Certificado de MCP (Model Context Protocol)",
+                "en": "MCP Certificate (Model Context Protocol)"
+            },
+            "skills": ["AI Agents", "LLM Integration"],
+            "document": "certificate-mcp.pdf"
         }
     ],
     "recomendations": [
