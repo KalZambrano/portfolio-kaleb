@@ -132,13 +132,17 @@
         "iconDark": "vercel_dark.svg"
       },
       {
-        "name": "Cloudflare",
-        "icon": "cloudflare.svg"
+        "name": "Firebase",
+        "icon": "firebase.svg"
       },
       {
         "name": "Railway",
         "icon": "Railway_light.svg",
         "iconDark": "Railway_dark.svg"
+      },
+      {
+        "name": "Cloudflare",
+        "icon": "cloudflare.svg"
       }
     ],
 
