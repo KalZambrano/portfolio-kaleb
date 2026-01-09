@@ -116,6 +116,11 @@
         "icon": "vitejs.svg"
       },
       {
+        "name": "MCP",
+        "icon": "Model Context Protocol_light.svg",
+        "iconDark": "Model Context Protocol_dark.svg"
+      },
+      {
         "name": "Postman",
         "icon": "postman.svg"
       },
