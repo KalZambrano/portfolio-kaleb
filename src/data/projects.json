@@ -1,12 +1,23 @@
 {
     "projects":[
         {
+            "title": "Game Price Comparison",
+            "description": {
+                "en": "A web application that allows users to compare prices of video games across different digital stores, helping them find the best deals.",
+                "es": "Una aplicación web que permite a los usuarios comparar precios de videojuegos en diferentes tiendas digitales, ayudándoles a encontrar las mejores ofertas."
+            },
+            "image": "gamePrice.webp",
+            "tecs": ["Astro", "Tailwind", "React", "TS"],
+            "github": "https://github.com/KalZambrano/game-price-comparison",
+            "url": "https://gamecompare.vercel.app/"
+        },
+        {
             "title": "Cecapd",
             "description": {
                 "en": "I developed a landing page for the Center for In-Person and Virtual Diploma Training (CECAPD), focused on promoting internships and international agreements.",
                 "es": "Desarrollé una landing page para el Centro de Capacitación Presencial y Virtual de Diplomados (CECAPD), enfocada en promover pasantías y convenios internacionales."
             },
-            "image": "cecapd-shot.webp",
+            "image": "cecapd.webp",
             "tecs": ["Astro", "Tailwind", "JS"],
             "github": "https://github.com/KalZambrano/cecapd-landing",
             "url": "https://cecapd-landing.vercel.app/"
@@ -17,7 +28,7 @@
                 "en": "I worked alongside the Asden team, a project that contributes to the socioeconomic and environmental development of Peru.",
                 "es": "Trabajé junto al equipo de Asden, un proyecto que contribuye al desarrollo socioeconómico y ambiental del Perú."
             },
-            "image": "asden-shot.webp",
+            "image": "asden.webp",
             "tecs": ["Laravel", "Tailwind", "JS"],
             "url": "https://asdenperuong.com/"
         },
@@ -27,7 +38,7 @@
                 "en": "I contributed to the development of visual experiences alongside the Yuntas Publicidad team, leaders in lighting and design in the Peruvian market.",
                 "es": "Aporté en el desarrollo de experiencias visuales junto al equipo de Yuntas Publicidad, líderes en iluminación y diseño en el mercado peruano."
             },
-            "image": "yuntas-shot.webp",
+            "image": "yuntas.webp",
             "tecs": ["Astro", "Tailwind", "React", "TS"],
             "url": "https://yuntaspublicidad.com/"
         }
