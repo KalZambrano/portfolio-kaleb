@@ -30,6 +30,16 @@
             "document": "web-frontend-udemy.pdf"
         },
         {
+            "organization": "Udemy",
+            "image": "udemy-logo.webp",
+            "job_title": {
+                "es": "Certificado de JavaScript",
+                "en": "JavaScript Certificate"
+            },
+            "skills": ["JavaScript", "TypeScript"],
+            "document": "javascript-certificate.pdf"
+        },
+        {
             "organization": "Anthropic",
             "image": "anthropic-logo.webp",
             "job_title": {
