@@ -24,7 +24,7 @@ const { imageSrc, organization, title, href, skills } = Astro.props;
       decoding="async"
     />
     <span>
-      <h2 class="font-bold text-xl">{title}</h2>
+      <h2 class="font-bold text-xl line-clamp-2" title={title}>{title}</h2>
       <h3 class="text-green-700 dark:text-green-400">{organization}</h3>
     </span>
   </div>

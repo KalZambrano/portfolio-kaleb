@@ -19,7 +19,7 @@ export const SOCIAL: Socials[] = [
     {
         id: "linkedin",
         name: "Linkedin",
-        url: "https://www.linkedin.com/in/kaleb-zambrano-berlanga-2118a0300/",
+        url: "https://www.linkedin.com/in/kaleb-zambrano-berlanga/",
         label: "Visit profile on Linkedin",
         image: {
             logo: LinkedIn,

@@ -39,7 +39,7 @@
       {
         "name": "Tailwind CSS",
         "icon": "tailwindcss.svg",
-        "level": { "es": "Intermedio", "en": "Middle" }
+        "level": { "es": "Avanzado", "en": "Advanced" }
       },
       {
         "name": "Next.js",
