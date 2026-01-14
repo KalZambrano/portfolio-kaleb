@@ -1,6 +1,17 @@
 {
     "projects":[
         {
+            "title": "Multilingual Portfolio",
+            "description": {
+                "en": "A responsive portfolio layout for the web that can be modified using just a JSON file with support for multiple languages, dark and light modes.",
+                "es": "Un portafolio responsive maquetado para web modificando solo un archivo JSON con soporte para múltiples idiomas, modo oscuro y claro."
+            },
+            "image": "portfolio.webp",
+            "tecs": ["Astro", "Tailwind", "TS"],
+            "github": "https://github.com/KalZambrano/portfolio-json",
+            "url": "https://multilingual-json-portfolio.vercel.app/"
+        },
+        {
             "title": "Game Price Comparison",
             "description": {
                 "en": "A web application that allows users to compare prices of video games across different digital stores, helping them find the best deals.",
