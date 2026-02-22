@@ -1,5 +1,6 @@
 ---
 import SkillCard from "./SkillCard.astro";
+import skillsData from "@/data/skills.json";
 
 import { type Skill } from "@/types/skill";
 
@@ -8,7 +9,9 @@ interface Props {
 }
 
 const { skills } = Astro.props;
+const levels = skillsData.levels;
 // console.log(skills);
+
 ---
 
 <section
@@ -20,7 +23,7 @@ const { skills } = Astro.props;
       skills.map((skill) => (
         <SkillCard
           title={skill.name}
-          level={skill.level}
+          level={levels[skill.level]}
           iconSrc={skill.icon}
           iconDark={skill.iconDark}
         />

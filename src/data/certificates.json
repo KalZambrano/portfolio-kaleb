@@ -17,6 +17,7 @@
                 "es": "Certificado de inglés",
                 "en": "English Certificate"
             },
+            "skills": ["English"],
             "document": "EF_SET_Certificate.pdf"
         },
         {
@@ -38,6 +39,16 @@
             },
             "skills": ["JavaScript", "TypeScript"],
             "document": "javascript-certificate.pdf"
+        },
+        {
+            "organization": "Datacamp",
+            "image": "datacamp-logo.webp",
+            "job_title": {
+                "es": "Certificado de Docker Intermedio",
+                "en": "Docker Intermediate Certificate"
+            },
+            "skills": ["Docker"],
+            "document": "docker-certificate.pdf"
         },
         {
             "organization": "Anthropic",

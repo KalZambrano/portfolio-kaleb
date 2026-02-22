@@ -10,6 +10,8 @@ interface Props {
 
 const { currentLocale } = Astro;
 const {iconSrc, iconDark, title, level} = Astro.props
+// console.log(level)
+// console.log(currentLocale)
 ---
 <article class="w-[136px] h-fit rounded-xl flex flex-col items-center gap-3 p-3 cursor-default hover:scale-110 transition-all ease-in-out">
     <span class="font-bold">{title}</span>

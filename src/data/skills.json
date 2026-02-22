@@ -1,25 +1,44 @@
 {
+  "levels": {
+    "advanced": {
+      "es": "Avanzado",
+      "en": "Advanced"
+    },
+    "middle": {
+      "es": "Intermedio",
+      "en": "Middle"
+    },
+    "basic": {
+      "es": "Básico",
+      "en": "Basic"
+    },
+    "learning": {
+      "es": "Aprendiendo",
+      "en": "Learning"
+    }
+  },
+
   "skills": {
     "fundamentals": [
       {
         "name": "HTML",
         "icon": "html5.svg",
-        "level": { "es": "Avanzado", "en": "Advanced" }
+        "level": "advanced"
       },
       {
         "name": "CSS",
         "icon": "css.svg",
-        "level": { "es": "Avanzado", "en": "Advanced" }
+        "level": "advanced"
       },
       {
         "name": "JavaScript",
         "icon": "javascript.svg",
-        "level": { "es": "Avanzado", "en": "Advanced" }
+        "level": "advanced"
       },
       {
         "name": "TypeScript",
         "icon": "typescript.svg",
-        "level": { "es": "Intermedio", "en": "Middle" }
+        "level": "middle"
       }
     ],
 
@@ -28,28 +47,28 @@
         "name": "React",
         "icon": "react_light.svg",
         "iconDark": "react_dark.svg",
-        "level": { "es": "Intermedio", "en": "Middle" }
+        "level": "middle"
       },
       {
         "name": "Astro",
         "icon": "astro.svg",
         "iconDark": "astro_dark.svg",
-        "level": { "es": "Intermedio", "en": "Middle" }
+        "level": "middle"
       },
       {
         "name": "Tailwind CSS",
         "icon": "tailwindcss.svg",
-        "level": { "es": "Avanzado", "en": "Advanced" }
+        "level": "advanced"
       },
       {
         "name": "Next.js",
         "icon": "nextjs_icon_dark.svg",
-        "level": { "es": "Básico", "en": "Basic" }
+        "level": "basic"
       },
       {
         "name": "Angular",
         "icon": "angular.svg",
-        "level": { "es": "Básico", "en": "Basic" }
+        "level": "basic"
       }
     ],
 
@@ -57,29 +76,29 @@
       {
         "name": "Node.js",
         "icon": "nodejs.svg",
-        "level": { "es": "Intermedio", "en": "Middle" }
+        "level": "middle"
       },
       {
         "name": "Express",
         "icon": "expressjs.svg",
         "iconDark": "expressjs_dark.svg",
-        "level": { "es": "Intermedio", "en": "Middle" }
+        "level": "middle"
       },
       {
         "name": "Laravel",
         "icon": "laravel.svg",
-        "level": { "es": "Intermedio", "en": "Middle" }
+        "level": "middle"
       },
       {
         "name": "PHP",
         "icon": "php.svg",
         "iconDark": "php_dark.svg",
-        "level": { "es": "Básico", "en": "Basic" }
+        "level": "basic"
       },
       {
         "name": "Python",
         "icon": "python.svg",
-        "level": { "es": "Básico", "en": "Basic" }
+        "level": "basic"
       }
     ],
 
@@ -87,22 +106,22 @@
       {
         "name": "MySQL",
         "icon": "mysql.svg",
-        "level": { "es": "Intermedio", "en": "Middle" }
+        "level": "middle"
       },
       {
         "name": "SQL Server",
         "icon": "sql-server.svg",
-        "level": { "es": "Intermedio", "en": "Middle" }
+        "level": "middle"
       },
       {
         "name": "PostgreSQL",
         "icon": "postgresql.svg",
-        "level": { "es": "Básico", "en": "Basic" }
+        "level": "middle"
       },
       {
         "name": "Supabase",
         "icon": "supabase.svg",
-        "level": { "es": "Aprendiendo", "en": "Learning" }
+        "level": "learning"
       }
     ],
 
@@ -123,6 +142,10 @@
       {
         "name": "Postman",
         "icon": "postman.svg"
+      },
+      {
+        "name": "Docker",
+        "icon": "docker.svg"
       },
       {
         "name": "Figma",
@@ -155,12 +178,12 @@
       {
         "name": "WordPress",
         "icon": "wordpress.svg",
-        "level": { "es": "Aprendiendo", "en": "Learning" }
+        "level": "basic"
       },
       {
         "name": "WebFlow",
         "icon": "webflow.svg",
-        "level": { "es": "Aprendiendo", "en": "Learning" }
+        "level": "learning"
       }
     ]
   }
