@@ -1,12 +1,12 @@
 ---
-import MaximizeIcon from "@/assets/icons/arrows-maximize.svg"
+import MaximizeIcon from "@/assets/icons/arrows-maximize.svg";
 
 interface Props {
-  imageSrc: string,
-  organization: string,
-  title: string,
-  href: string,
-  skills: string[]
+  imageSrc: string;
+  organization: string;
+  title: string;
+  href: string;
+  skills: string[];
 }
 
 const { imageSrc, organization, title, href, skills } = Astro.props;
@@ -29,19 +29,19 @@ const { imageSrc, organization, title, href, skills } = Astro.props;
     </span>
   </div>
   <div class="flex justify-between items-center gap-x-2">
-    <div class="flex flex-wrap gap-3">
+    <div
+      class="flex gap-3 w-56 truncate overflow-hidden"
+      style="mask-image: linear-gradient(to right, black 90%, transparent);"
+    >
       {
-        skills && skills.length > 0 ? (
-          skills.map((skill) => (
-            <span class="rounded-full px-3 py-1 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 transition-colors ease-in-out">
-              {skill}
-            </span>
-          ))
-        ) : (
-          <span class="rounded-full px-3 py-1 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 transition-colors ease-in-out">
-            Personal
+        skills.map((skill) => (
+          <span
+            class="rounded-full px-3 py-1 text-xs text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 transition-colors ease-in-out"
+            title={skill}
+          >
+            {skill}
           </span>
-        )
+        ))
       }
     </div>
     <a

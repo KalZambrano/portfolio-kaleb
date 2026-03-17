@@ -1,72 +1,92 @@
 {
-    "certificates": [
-        {
-            "organization": "Neon House Led",
-            "image": "NHL_icon.webp",
-            "job_title": {
-                "es": "Desarrollador Web Jr.",
-                "en": "Junior Web Developer"
-            },
-            "skills":["Laravel", "Hostinger"],
-            "document": "NHL_certificate.pdf"
-        },
-        {
-            "organization": "EF Set",
-            "image": "ef-logo.webp",
-            "job_title": {
-                "es": "Certificado de inglés",
-                "en": "English Certificate"
-            },
-            "skills": ["English"],
-            "document": "EF_SET_Certificate.pdf"
-        },
-        {
-            "organization": "Udemy",
-            "image": "udemy-logo.webp",
-            "job_title": {
-                "es": "Certificado de Web Frontend",
-                "en": "Web Frontend Certificate"
-            },
-            "skills": ["HTML", "CSS", "JavaScript"],
-            "document": "web-frontend-udemy.pdf"
-        },
-        {
-            "organization": "Udemy",
-            "image": "udemy-logo.webp",
-            "job_title": {
-                "es": "Certificado de JavaScript",
-                "en": "JavaScript Certificate"
-            },
-            "skills": ["JavaScript", "TypeScript"],
-            "document": "javascript-certificate.pdf"
-        },
-        {
-            "organization": "Datacamp",
-            "image": "datacamp-logo.webp",
-            "job_title": {
-                "es": "Certificado de Docker Intermedio",
-                "en": "Docker Intermediate Certificate"
-            },
-            "skills": ["Docker"],
-            "document": "docker-certificate.pdf"
-        },
-        {
-            "organization": "Anthropic",
-            "image": "anthropic-logo.webp",
-            "job_title": {
-                "es": "Certificado de MCP (Model Context Protocol)",
-                "en": "MCP Certificate (Model Context Protocol)"
-            },
-            "skills": ["AI Agents", "LLM Integration"],
-            "document": "mcp-certificate.pdf"
-        }
-    ],
-    "recomendations": [
-        {
-            "organization": "Neon House Led",
-            "image": "NHL_icon.webp",
-            "author": "Juan Carlos Molina",
-            "document": "NHL_recomendation.pdf"
-        }
-    ]
+  "certificates": [
+    {
+      "organization": "Neon House Led",
+      "image": "NHL_icon.webp",
+      "job_title": {
+        "es": "Desarrollador Web Jr.",
+        "en": "Junior Web Developer"
+      },
+      "skills": ["Laravel", "Hostinger"],
+      "document": "NHL_certificate.pdf"
+    },
+    {
+      "organization": "EF Set",
+      "image": "ef-logo.webp",
+      "job_title": {
+        "es": "Certificado de inglés",
+        "en": "English Certificate"
+      },
+      "skills": ["English"],
+      "document": "EF_SET_Certificate.pdf"
+    },
+    {
+      "organization": "Udemy",
+      "image": "udemy-logo.webp",
+      "job_title": {
+        "es": "Certificado de Web Frontend",
+        "en": "Web Frontend Certificate"
+      },
+      "skills": ["HTML", "CSS", "JavaScript"],
+      "document": "web-frontend-udemy.pdf"
+    },
+    {
+      "organization": "Udemy",
+      "image": "udemy-logo.webp",
+      "job_title": {
+        "es": "Certificado de JavaScript",
+        "en": "JavaScript Certificate"
+      },
+      "skills": ["JavaScript", "TypeScript"],
+      "document": "javascript-certificate.pdf"
+    },
+    {
+      "organization": "Udemy",
+      "image": "udemy-logo.webp",
+      "job_title": {
+        "es": "Certificado de Excel",
+        "en": "Excel Certificate"
+      },
+      "skills": ["Excel", "Power Query"],
+      "document": "certificate-excel.pdf"
+    },
+    {
+      "organization": "Cisco",
+      "image": "cisco-logo.webp",
+      "job_title": {
+        "es": "Certificado de Gestión de Amenazas Cibernéticas",
+        "en": "Cyber Threat Management Certificate"
+      },
+      "skills": ["Cyber Security", "Threat Management"],
+      "document": "certificate-cyber-threat-management.pdf"
+    },
+    {
+      "organization": "Datacamp",
+      "image": "datacamp-logo.webp",
+      "job_title": {
+        "es": "Certificado de Docker Intermedio",
+        "en": "Docker Intermediate Certificate"
+      },
+      "skills": ["Docker"],
+      "document": "docker-certificate.pdf"
+    },
+    {
+      "organization": "Anthropic",
+      "image": "anthropic-logo.webp",
+      "job_title": {
+        "es": "Certificado de MCP (Model Context Protocol)",
+        "en": "MCP Certificate (Model Context Protocol)"
+      },
+      "skills": ["AI Agents", "LLM Integration"],
+      "document": "mcp-certificate.pdf"
+    }
+  ],
+  "recomendations": [
+    {
+      "organization": "Neon House Led",
+      "image": "NHL_icon.webp",
+      "author": "Juan Carlos Molina",
+      "document": "NHL_recomendation.pdf"
+    }
+  ]
 }
