@@ -5,6 +5,22 @@
         "en": "Junior Web Developer",
         "es": "Desarrollador Web Jr."
       },
+      "company": "Royal Systems",
+      "description": {
+        "en": "Developed the frontend of an enterprise CRM with Angular, building interfaces for customer management, sales tracking, role-based access control, and report visualization, as part of a full-stack team using Spring Boot and SQL Server.",
+        "es": "Desarrollé el frontend de un CRM empresarial con Angular, construyendo interfaces para la gestión de clientes, seguimiento de ventas, control de acceso por roles y visualización de reportes, como parte de un equipo fullstack con Spring Boot y SQL Server."
+      },
+      "time": {
+        "en": "March 2026 - Present",
+        "es": "Marzo 2026 - Actualidad"
+      },
+      "current": true
+    },
+    {
+      "title": {
+        "en": "Junior Web Developer",
+        "es": "Desarrollador Web Jr."
+      },
       "company": "Neon House Led",
       "description": {
         "en": "Developed RESTful APIs using Laravel and implemented dynamic pages with Blade. Led a development team, coordinating both code and monthly deployments on Hostinger, while applying SEO best practices.",
