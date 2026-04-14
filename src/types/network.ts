@@ -8,4 +8,5 @@ export interface Socials {
     width: number
     height: number
   }
+  animateClass: string
 }

@@ -14,7 +14,8 @@ export const SOCIAL: Socials[] = [
             logo: GitHub,
             width: 200,
             height: 200
-        }
+        },
+        animateClass: "animate-delay-400"
     },
     {
         id: "linkedin",
@@ -25,7 +26,8 @@ export const SOCIAL: Socials[] = [
             logo: LinkedIn,
             width: 200,
             height: 200
-        }
+        },
+        animateClass: "animate-delay-600"
     },
     {
         id: "instagram",
@@ -36,6 +38,7 @@ export const SOCIAL: Socials[] = [
             logo: Instagram,
             width: 200,
             height: 200
-        }
+        },
+        animateClass: "animate-delay-800"
     }
 ] as const

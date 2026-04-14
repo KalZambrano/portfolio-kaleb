@@ -1,10 +1,10 @@
 ---
 import { type Socials } from "@/types/network";
 
-const { name, image, url, label } = Astro.props as Socials;
+const { name, image, url, label, animateClass } = Astro.props as Socials;
 ---
 
-<li class="relative flex text-neutral-500 dark:text-neutral-400 w-fit group">
+<li class={`relative flex text-neutral-500 dark:text-neutral-400 w-fit group ${animateClass} animate-fade-in`}>
   <a
     class="hover:scale-110 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all"
     rel="noopener noreferrer"

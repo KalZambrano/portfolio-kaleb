@@ -17,24 +17,31 @@ const i18n = getI18N({ currentLocale });
   <aside class="mt-12 md:mt-2 md:mr-20 order-2 md:order-1">
     <ul class="flex md:flex-col flex-row gap-2 md:gap-8 justify-center">
       {
-        SOCIAL.map(({ name, url, image, label }) => (
-          <SocialPill image={image} name={name} url={url} label={label} />
+        SOCIAL.map(({ name, url, image, label, animateClass }) => (
+          <SocialPill image={image} name={name} url={url} label={label} animateClass={animateClass} />
         ))
       }
     </ul>
     <hr
-      class="h-0 md:h-[60px] w-[2px] mt-12 border-t-0 dark:bg-neutral-400 bg-neutral-500 mx-auto rounded-full"
+      class="h-0 md:h-[60px] w-[2px] mt-12 border-t-0 dark:bg-neutral-400 bg-neutral-500 mx-auto rounded-full animate-fade-in animate-delay-1000"
     />
   </aside>
   <article class="order-1 md:order-2">
-    <div class="flex gap-4 mb-2 items-center">
-      <img
-        class="rounded-full size-16"
-        src="/profile.webp"
-        alt="Kaleb Zambrano"
-        loading="lazy"
-        decoding="async"
-      />
+    <div class="flex gap-4 mb-8 items-center animate-fade-in-up animate-delay-400">
+      <div class="relative flex-shrink-0">
+        <div
+          class="absolute inset-0 rounded-full bg-cyan-400/30 dark:bg-cyan-400/20 blur-xl scale-125"
+          aria-hidden="true"
+        >
+        </div>
+        <img
+          class="relative rounded-full shadow-2xl size-16 ring-2 ring-cyan-400/60 ring-offset-2 ring-offset-gray-50 dark:ring-offset-gray-950"
+          src="/profile.webp"
+          alt="Kaleb Zambrano"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
       <a
         target="_blank"
         rel="noopener noreferrer"
