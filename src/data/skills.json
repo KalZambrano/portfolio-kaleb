@@ -61,13 +61,13 @@
         "level": "advanced"
       },
       {
-        "name": "Next.js",
-        "icon": "nextjs_icon_dark.svg",
-        "level": "basic"
-      },
-      {
         "name": "Angular",
         "icon": "angular.svg",
+        "level": "middle"
+      },
+      {
+        "name": "Next.js",
+        "icon": "nextjs_icon_dark.svg",
         "level": "basic"
       }
     ],
@@ -98,6 +98,11 @@
       {
         "name": "Python",
         "icon": "python.svg",
+        "level": "basic"
+      },
+      {
+        "name": "Spring",
+        "icon": "spring.svg",
         "level": "basic"
       }
     ],
