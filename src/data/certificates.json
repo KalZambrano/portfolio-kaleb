@@ -11,16 +11,6 @@
       "document": "NHL_certificate.pdf"
     },
     {
-      "organization": "EF Set",
-      "image": "ef-logo.webp",
-      "job_title": {
-        "es": "Certificado de inglés",
-        "en": "English Certificate"
-      },
-      "skills": ["English"],
-      "document": "EF_SET_Certificate.pdf"
-    },
-    {
       "organization": "Udemy",
       "image": "udemy-logo.webp",
       "job_title": {
@@ -69,6 +59,16 @@
       },
       "skills": ["Docker"],
       "document": "docker-certificate.pdf"
+    },
+    {
+      "organization": "Datacamp",
+      "image": "datacamp-logo.webp",
+      "job_title": {
+        "es": "Certificado de Prompt Engineering",
+        "en": "Prompt Engineering Certificate"
+      },
+      "skills": ["Prompt Engineering"],
+      "document": "certificate-prompting.pdf"
     },
     {
       "organization": "Anthropic",

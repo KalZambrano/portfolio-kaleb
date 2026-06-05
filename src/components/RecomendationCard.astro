@@ -1,12 +1,12 @@
 ---
-import MaximizeIcon from "@/assets/icons/arrows-maximize.svg"
+import MaximizeIcon from "@/assets/icons/arrows-maximize.svg";
 import GlareHover from "y/GlareHover/GlareHover";
 
 interface Props {
-  imageSrc: string,
-  organization: string,
-  author: string,
-  href: string
+  imageSrc: string;
+  organization: string;
+  author: string;
+  href: string;
 }
 
 const { imageSrc, organization, author, href } = Astro.props;
@@ -15,41 +15,42 @@ const { imageSrc, organization, author, href } = Astro.props;
 <article
   class="border bg-white dark:bg-gray-950/80 border-gray-400 dark:border-gray-700 rounded-2xl group transition-colors ease-in-out"
 >
-  <GlareHover
-    client:idle
-    glareColor="#2dffbc"
-    background="transparent"
-    glareOpacity={0.3}
-    glareAngle={-30}
-    glareSize={300}
-    transitionDuration={800}
-    playOnce={false}
-    className={"px-4"}
-  >
-    <div class="flex flex-col items-center gap-4 group-hover:opacity-5 duration-300">
-      <img
-        class="w-20 h-fit rounded-xl"
-        src={`/${imageSrc}`}
-        alt={`${organization} logo`}
-        loading="lazy"
-        decoding="async"
-      />
-      <span class="text-center">
-        <h3 class="text-xl font-bold text-balance text-center">
-          {organization}
-        </h3>
-        <h4 class="text-sm dark:text-gray-300">{author}</h4>
-      </span>
-    </div>
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`View document from ${organization}`}
-      class="group-hover:opacity-100 opacity-0 transition-opacity duration-200 ease-in-out text-cyan-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-      href={`/documents/${href}`}
+  <a href={`/documents/${href}`} target="_blank" rel="noopener noreferrer">
+    <GlareHover
+      client:idle
+      glareColor="#2dffbc"
+      background="transparent"
+      glareOpacity={0.3}
+      glareAngle={-30}
+      glareSize={300}
+      transitionDuration={800}
+      playOnce={false}
+      className={"px-4"}
     >
-      <MaximizeIcon class="size-16" />
-      <span class="text-center text-2xl font-bold">View</span>
-    </a>
-  </GlareHover>
+      <div
+        class="flex flex-col items-center gap-4 group-hover:opacity-5 duration-300"
+      >
+        <img
+          class="w-20 h-fit rounded-xl"
+          src={`/${imageSrc}`}
+          alt={`${organization} logo`}
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="text-center">
+          <h3 class="text-xl font-bold text-balance text-center">
+            {organization}
+          </h3>
+          <h4 class="text-sm dark:text-gray-300">{author}</h4>
+        </span>
+      </div>
+      <div
+        aria-label={`View document from ${organization}`}
+        class="group-hover:opacity-100 opacity-0 transition-opacity duration-200 ease-in-out text-cyan-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      >
+        <MaximizeIcon class="size-16" />
+        <span class="text-center text-2xl font-bold">View</span>
+      </div>
+    </GlareHover>
+  </a>
 </article>
