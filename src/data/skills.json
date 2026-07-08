@@ -85,6 +85,11 @@
         "level": "middle"
       },
       {
+        "name": "Supabase",
+        "icon": "supabase.svg",
+        "level": "basic"
+      },
+      {
         "name": "Laravel",
         "icon": "laravel.svg",
         "level": "middle"
@@ -122,11 +127,6 @@
         "name": "PostgreSQL",
         "icon": "postgresql.svg",
         "level": "middle"
-      },
-      {
-        "name": "Supabase",
-        "icon": "supabase.svg",
-        "level": "learning"
       }
     ],
 
