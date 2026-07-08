@@ -6,13 +6,25 @@ import "@fontsource-variable/onest";
 import { getLangFromUrl } from "@/i18n/utils";
 // import { SOCIAL } from "@/const/social";
 
-const { title, description, keywords, siteName, siteUrl, image, author } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  keywords: string;
+  siteName: string;
+  siteUrl: string;
+  image?: string;
+  author: string;
+}
+
+const { title, description, keywords, siteName, siteUrl, image, author } = Astro.props as Props;
 const lang = getLangFromUrl(Astro.url);
 
 const siteNameSafe = siteName || "Kaleb Zambrano";
 // const authorSafe = author || siteNameSafe;
 const ogImage = image || "/og-banner.webp";
 const canonical = siteUrl ? new URL(Astro.url.pathname, siteUrl).toString() : null;
+const canonicalURL = canonical || Astro.url.toString();
+
 const ogLocale = lang === "en" ? "en_US" : "es_ES";
 // const ldData = {
 //   "@context": "https://schema.org",
@@ -30,22 +42,22 @@ const ogLocale = lang === "en" ? "en_US" : "es_ES";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="author" content={author} />
     <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0f172a" />
 
     <link rel="icon" type="image/svg+xml" href="/yin-yang.svg" />
     <link rel="icon" type="image/svg+xml" href="/yin-yang-dark.svg" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href={canonicalURL} />
 
-    {canonical ? <link rel="canonical" href={canonical} /> : null}
-
-    <title>{title ? `${title} | ${siteNameSafe}` : siteNameSafe}</title>
+    <title>{title}</title>
 
     {/* Open Graph */}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={ogLocale} />
     <meta property="og:site_name" content={siteNameSafe} />
-    <meta property="og:title" content={title ? `${title} | ${siteNameSafe}` : siteNameSafe} />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {canonical ? <meta property="og:url" content={canonical} /> : null}
     <meta property="og:image" content={ogImage} />
@@ -53,7 +65,7 @@ const ogLocale = lang === "en" ? "en_US" : "es_ES";
 
     {/* Twitter Card */}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title ? `${title} | ${siteNameSafe}` : siteNameSafe} />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
@@ -99,5 +111,7 @@ const ogLocale = lang === "en" ? "en_US" : "es_ES";
     }
   </style>
 
+
+</html>
 
 </html>
