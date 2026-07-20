@@ -136,10 +136,6 @@
         "icon": "git.svg"
       },
       {
-        "name": "Vite",
-        "icon": "vitejs.svg"
-      },
-      {
         "name": "MCP",
         "icon": "Model Context Protocol_light.svg",
         "iconDark": "Model Context Protocol_dark.svg"
@@ -172,6 +168,11 @@
         "name": "Railway",
         "icon": "Railway_light.svg",
         "iconDark": "Railway_dark.svg"
+      },
+      {
+        "name": "Render",
+        "icon": "Render_light.svg",
+        "iconDark": "Render_dark.svg"
       },
       {
         "name": "Cloudflare",
