@@ -1,44 +1,42 @@
 ---
-import RedirectIcon from "@/assets/icons/external-link.svg"
-import GitHub from "@/assets/social/github.svg"
+import RedirectIcon from "@/assets/icons/external-link.svg";
+import GitHub from "@/assets/social/github.svg";
 
-interface Props{
-  image: string,
-  title: string,
-  description: string,
-  github?: string,
-  url: string
-  tecs: Tec[]
+interface Props {
+  image: string;
+  title: string;
+  description: string;
+  github?: string;
+  url: string;
+  tecs: Tec[];
 }
 
-type Tec = "Laravel" | "Astro" | "JS" | "Tailwind" | "React" | "TS";
+type Tec =
+  "Laravel" | "Astro" | "JS" | "Tailwind" | "React" | "TS" | "Supabase";
 
 const LANGUAJE_DICTIONARY: Record<
   Tec,
-  { color: string; src: string; srcDark: string; alt: string }
+  { color: string; src: string; srcDark?: string; alt: string }
 > = {
   Laravel: {
     color: "bg-red-600/15",
     src: "/icons/laravel.svg",
-    srcDark: "/icons/laravel.svg",
     alt: "Laravel Icon",
   },
   Astro: {
     color: "bg-orange-600/15 text-black",
-    src: "/icons/dark/astro_dark.svg",
-    srcDark: "/icons/astro.svg",
+    src: "/icons/astro.svg",
+    srcDark: "/icons/dark/astro_dark.svg",
     alt: "Astro Icon",
   },
   JS: {
     color: "bg-yellow-600/15",
     src: "/icons/javascript.svg",
-    srcDark: "/icons/javascript.svg",
     alt: "JavaScript Icon",
   },
   Tailwind: {
     color: "bg-cyan-600/15",
     src: "/icons/tailwindcss.svg",
-    srcDark: "/icons/tailwindcss.svg",
     alt: "Tailwind Icon",
   },
   React: {
@@ -50,17 +48,30 @@ const LANGUAJE_DICTIONARY: Record<
   TS: {
     color: "bg-blue-600/15",
     src: "/icons/typescript.svg",
-    srcDark: "/icons/typescript.svg",
     alt: "TypeScript Icon",
+  },
+  Supabase: {
+    color: "bg-green-600/15",
+    src: "/icons/supabase.svg",
+    alt: "Supabase Icon",
   },
 };
 
 const generateTecIconHTML = (tec: Tec): string => {
   const { color, src, srcDark, alt } = LANGUAJE_DICTIONARY[tec];
-  return `
-  <img class="size-9 ${color} p-1.5 rounded-md dark:block hidden" src="${src}" alt="${alt}" loading="lazy" decoding="async">
-  <img class="size-9 ${color} p-1.5 rounded-md dark:hidden block" src="${srcDark}" alt="${alt}" loading="lazy" decoding="async">
-  `;
+
+  if (srcDark) {
+    // Si hay icono específico para modo oscuro, genera dos imágenes
+    return `
+    <img class="size-9 ${color} p-1.5 rounded-md dark:block hidden" src="${srcDark}" alt="${alt}" loading="lazy" decoding="async">
+    <img class="size-9 ${color} p-1.5 rounded-md dark:hidden block" src="${src}" alt="${alt}" loading="lazy" decoding="async">
+    `;
+  } else {
+    // Si no hay icono específico, genera solo una imagen
+    return `
+    <img class="size-9 ${color} p-1.5 rounded-md" src="${src}" alt="${alt}" loading="lazy" decoding="async">
+    `;
+  }
 };
 
 const { image, title, description, github, url, tecs } = Astro.props;
@@ -74,7 +85,7 @@ const { image, title, description, github, url, tecs } = Astro.props;
     style="mask-image: linear-gradient(black 70%, transparent);"
   >
     <img
-      class="group-hover:scale-110 ease-in-out transition-all duration-400"
+      class="group-hover:scale-105 ease-in-out transition-all duration-400"
       src={`/projects/${image}`}
       alt={`Imagen de presentación del proyecto de ${title}`}
       width="2600"
@@ -118,7 +129,9 @@ const { image, title, description, github, url, tecs } = Astro.props;
             aria-label={`${title} Preview`}
             rel="noopener noreferrer"
           >
-            <RedirectIcon class="size-9 bg-gray-600/15 hover:bg-gray-600/40 p-1.5 rounded-md transition-colors" />
+            <RedirectIcon
+              class="size-9 bg-gray-600/15 hover:bg-gray-600/40 p-1.5 rounded-md transition-colors"
+            />
           </a>
         </li>
       </ul>

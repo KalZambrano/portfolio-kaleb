@@ -1,57 +1,68 @@
 {
-    "projects":[
-        {
-            "title": "Multilingual Portfolio",
-            "description": {
-                "en": "A responsive portfolio layout for the web that can be modified using just a JSON file with support for multiple languages, dark and light modes.",
-                "es": "Un portafolio responsive maquetado para web modificando solo un archivo JSON con soporte para múltiples idiomas, modo oscuro y claro."
-            },
-            "image": "portfolio.webp",
-            "tecs": ["Astro", "Tailwind", "TS"],
-            "github": "https://github.com/KalZambrano/portfolio-json",
-            "url": "https://multilingual-json-portfolio.vercel.app/"
-        },
-        {
-            "title": "Game Price Comparison",
-            "description": {
-                "en": "A web application that allows users to compare prices of video games across different digital stores, helping them find the best deals.",
-                "es": "Una aplicación web que permite a los usuarios comparar precios de videojuegos en diferentes tiendas digitales, ayudándoles a encontrar las mejores ofertas."
-            },
-            "image": "gamePrice.webp",
-            "tecs": ["Astro", "Tailwind", "React", "TS"],
-            "github": "https://github.com/KalZambrano/game-price-comparison",
-            "url": "https://gamecompare.vercel.app/"
-        },
-        {
-            "title": "Cecapd",
-            "description": {
-                "en": "I developed a landing page for the Center for In-Person and Virtual Diploma Training (CECAPD), focused on promoting internships and international agreements.",
-                "es": "Desarrollé una landing page para el Centro de Capacitación Presencial y Virtual de Diplomados (CECAPD), enfocada en promover pasantías y convenios internacionales."
-            },
-            "image": "cecapd.webp",
-            "tecs": ["Astro", "Tailwind", "JS"],
-            "github": "https://github.com/KalZambrano/cecapd-landing",
-            "url": "https://cecapd-landing.vercel.app/"
-        },
-        {
-            "title": "Asden Perú",
-            "description": {
-                "en": "I worked alongside the Asden team, a project that contributes to the socioeconomic and environmental development of Peru.",
-                "es": "Trabajé junto al equipo de Asden, un proyecto que contribuye al desarrollo socioeconómico y ambiental del Perú."
-            },
-            "image": "asden.webp",
-            "tecs": ["Laravel", "Tailwind", "JS"],
-            "url": "https://asdenperuong.com/"
-        },
-        {
-            "title": "Yuntas Publicidad",
-            "description": {
-                "en": "I contributed to the development of visual experiences alongside the Yuntas Publicidad team, leaders in lighting and design in the Peruvian market.",
-                "es": "Aporté en el desarrollo de experiencias visuales junto al equipo de Yuntas Publicidad, líderes en iluminación y diseño en el mercado peruano."
-            },
-            "image": "yuntas.webp",
-            "tecs": ["Astro", "Tailwind", "React", "TS"],
-            "url": "https://yuntaspublicidad.com/"
-        }
-    ]
+  "projects": [
+    {
+      "title": "Multilingual Portfolio",
+      "description": {
+        "en": "JSON-driven multilingual portfolio with dark mode, responsive design, and effortless customization.",
+        "es": "Portafolio multilenguaje basado en JSON, responsive, con modo oscuro y personalización sencilla."
+      },
+      "image": "portfolio.webp",
+      "tecs": ["Astro", "Tailwind", "TS"],
+      "github": "https://github.com/KalZambrano/portfolio-json",
+      "url": "https://multilingual-json-portfolio.vercel.app/"
+    },
+    {
+      "title": "Ehomakis",
+      "description": {
+        "en": "Complete sushi ordering platform with real-time tracking, admin dashboard, and customer order updates.",
+        "es": "Plataforma completa para pedidos de sushi con seguimiento en tiempo real y panel administrativo."
+      },
+      "image": "ehomakis.webp",
+      "tecs": ["Astro", "Tailwind", "TS", "Supabase"],
+      "github": "https://github.com/KalZambrano/ehomaki-landing",
+      "url": "https://ehomakis.vercel.app/"
+    },
+    {
+      "title": "Game Price Comparison",
+      "description": {
+        "en": "Compare video game prices across stores and instantly discover the best available deals.",
+        "es": "Compara precios de videojuegos entre tiendas y encuentra las mejores ofertas al instante."
+      },
+      "image": "gamePrice.webp",
+      "tecs": ["Astro", "Tailwind", "React", "TS"],
+      "github": "https://github.com/KalZambrano/game-price-comparison",
+      "url": "https://gamecompare.vercel.app/"
+    },
+    {
+      "title": "Cecapd",
+      "description": {
+        "en": "Modern landing page promoting international programs, internships, and educational opportunities.",
+        "es": "Landing moderna para promover programas internacionales, pasantías y oportunidades educativas."
+      },
+      "image": "cecapd.webp",
+      "tecs": ["Astro", "Tailwind", "JS"],
+      "github": "https://github.com/KalZambrano/cecapd-landing",
+      "url": "https://cecapd-landing.vercel.app/"
+    },
+    {
+      "title": "Asden Perú",
+      "description": {
+        "en": "Institutional platform supporting environmental and socioeconomic initiatives across Peru.",
+        "es": "Plataforma institucional que impulsa iniciativas ambientales y de desarrollo socioeconómico en Perú."
+      },
+      "image": "asden.webp",
+      "tecs": ["Laravel", "Tailwind", "JS"],
+      "url": "https://asdenperuong.com/"
+    },
+    {
+      "title": "Yuntas Publicidad",
+      "description": {
+        "en": "Corporate website showcasing innovative lighting, branding, and visual design solutions.",
+        "es": "Sitio corporativo que destaca soluciones innovadoras de iluminación, branding y diseño visual."
+      },
+      "image": "yuntas.webp",
+      "tecs": ["Astro", "Tailwind", "React", "TS"],
+      "url": "https://yuntaspublicidad.com/"
+    }
+  ]
 }
