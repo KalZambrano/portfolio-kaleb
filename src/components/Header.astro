@@ -18,33 +18,55 @@ import {
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
+
+const navItems = [
+  {
+    href: translatePath("/#experiencia"),
+    label: "experiencia",
+    text: t("nav.experiencia"),
+  },
+  {
+    href: translatePath("/#habilidades"),
+    label: "habilidades",
+    text: t("nav.habilidades"),
+  },
+  {
+    href: translatePath("/#proyectos"),
+    label: "proyectos",
+    text: t("nav.proyectos"),
+  },
+  {
+    href: translatePath("/#certificados"),
+    label: "certificados",
+    text: t("nav.certificados"),
+  },
+  {
+    href: translatePath("/#sobremi"),
+    label: "sobremi",
+    text: t("nav.sobremi"),
+  },
+];
 ---
 
 <header
   id="header-nav"
   class="fixed top-0 left-1/2 -translate-x-1/2 w-full xl:w-3/4 px-6 py-4 z-20"
 >
-  <div class="max-w-7xl mx-auto flex items-center justify-end">
+  <div
+    class="max-w-7xl mx-auto flex items-center justify-end xl:justify-center"
+  >
     <nav
       id="header-menu"
       aria-label="Main navigation"
-      class="fixed w-full h-dvh inset-0 bg-[#ABD5FF]/90 dark:bg-[#152636]/90 xl:rounded-full xl:text-xl lg:text-xl flex flex-col items-center justify-center gap-14 xl:gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 xl:static xl:h-[initial] xl:bg-[initial] xl:dark:bg-[initial] xl:flex-row xl:translate-y-[initial]"
+      class="fixed w-full h-dvh inset-0 bg-[#ABD5FF]/90 dark:bg-[#152636]/90 xl:rounded-full xl:text-xl lg:text-xl flex flex-col items-center justify-center gap-14 xl:gap-8 -translate-y-full transition-transform duration-300 target:translate-y-0 xl:static xl:h-auto xl:bg-white/50 xl:dark:bg-gray-800/50 xl:flex-row xl:translate-y-[initial] xl:w-auto xl:px-6 xl:py-1.5 xl:border-gray-200 xl:dark:border-gray-600 xl:border-2"
     >
-      <HeaderLink href={translatePath("/#experiencia")} label="experiencia">
-        {t("nav.experiencia")}
-      </HeaderLink>
-      <HeaderLink href={translatePath("/#habilidades")} label="habilidades">
-        {t("nav.habilidades")}
-      </HeaderLink>
-      <HeaderLink href={translatePath("/#proyectos")} label="proyectos">
-        {t("nav.proyectos")}
-      </HeaderLink>
-      <HeaderLink href={translatePath("/#certificados")} label="certificados">
-        {t("nav.certificados")}
-      </HeaderLink>
-      <HeaderLink href={translatePath("/#sobremi")} label="sobremi">
-        {t("nav.sobremi")}
-      </HeaderLink>
+      {
+        navItems.map((item) => (
+          <HeaderLink href={item.href} label={item.label}>
+            {item.text}
+          </HeaderLink>
+        ))
+      }
       <LanguajeSelector />
       <ThemeToogle />
       <a
@@ -53,56 +75,19 @@ const translatePath = useTranslatedPath(lang);
         aria-label="Close button"
         rel="noopener noreferrer"
       >
-        <CloseIcon />
+        <CloseIcon class="size-6" />
       </a>
     </nav>
     <a
       href="#header-menu"
       class="xl:hidden text-black dark:text-white"
       aria-label="Burger menu button"
-      rel="noopener noreferrer"><MenuIcon /></a
+      rel="noopener noreferrer"
     >
+      <MenuIcon class="size-6" />
+    </a>
   </div>
 </header>
-<!-- 
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll("header nav a");
-    const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-blue-500");
-            } else {
-              item.classList.remove("text-blue-500");
-            }
-          });
-        }
-      });
-    };
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    });
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect();
-      } else {
-        sections.forEach((section) => {
-          observer.observe(section);
-        });
-      }
-    };
-  });
-</script> -->
 
 <style>
   @media (width >= 80rem) {
@@ -116,6 +101,7 @@ const translatePath = useTranslatedPath(lang);
   @keyframes nav-shadown {
     0% {
       background-color: transparent;
+      border-color: transparent;
     }
     100% {
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
