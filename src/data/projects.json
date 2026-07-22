@@ -23,6 +23,16 @@
       "url": "https://ehomakis.vercel.app/"
     },
     {
+      "title": "Innovati",
+      "description": {
+        "en": "Corporate website showcasing innovative IT outsourcing solutions for growing businesses.",
+        "es": "Sitio corporativo que presenta soluciones innovadoras de outsourcing TI para empresas."
+      },
+      "image": "innovati.webp",
+      "tecs": ["Astro", "Tailwind"],
+      "url": "https://innovatisoluciones.com/"
+    },
+    {
       "title": "Game Price Comparison",
       "description": {
         "en": "Compare video game prices across stores and instantly discover the best available deals.",
