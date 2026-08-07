@@ -23,6 +23,17 @@
       "url": "https://ehomakis.vercel.app/"
     },
     {
+      "title": "CanIPlay",
+      "description": {
+        "en": "A web app that scans your hardware and checks which games it can actually run.",
+        "es": "Una aplicación web que analiza tu hardware y verifica qué juegos puede correr tu equipo."
+      },
+      "image": "caniplay.webp",
+      "tecs": ["React", "Tailwind", "CloudFlare"],
+      "github": "https://github.com/KalZambrano/caniplay",
+      "url": "https://caniplay.vercel.app/"
+    },
+    {
       "title": "Innovati",
       "description": {
         "en": "Corporate website showcasing innovative IT outsourcing solutions for growing businesses.",

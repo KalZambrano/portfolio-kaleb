@@ -12,7 +12,7 @@ interface Props {
 }
 
 type Tec =
-  "Laravel" | "Astro" | "JS" | "Tailwind" | "React" | "TS" | "Supabase";
+  "Laravel" | "Astro" | "JS" | "Tailwind" | "React" | "TS" | "Supabase" | "CloudFlare";
 
 const LANGUAJE_DICTIONARY: Record<
   Tec,
@@ -55,6 +55,11 @@ const LANGUAJE_DICTIONARY: Record<
     src: "/icons/supabase.svg",
     alt: "Supabase Icon",
   },
+  CloudFlare: {
+    color: "bg-amber-600/15",
+    src: "/icons/cloudflare.svg",
+    alt: "CloudFlare Icon",
+  }
 };
 
 const generateTecIconHTML = (tec: Tec): string => {
