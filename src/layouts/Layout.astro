@@ -75,6 +75,18 @@ const ogLocale = lang === "en" ? "en_US" : "es_ES";
 
     <!-- {/* JSON-LD structured data */}
     <script type="application/ld+json">{JSON.stringify(ldData)}</script> -->
+
+    {/* Aplica el tema antes de pintar: evita el flash y respeta la preferencia del sistema */}
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem("theme");
+        const isDark =
+          stored === "dark" ||
+          (stored === null &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark", isDark);
+      })();
+    </script>
   </head>
 
   <body>
@@ -111,7 +123,5 @@ const ogLocale = lang === "en" ? "en_US" : "es_ES";
     }
   </style>
 
-
-</html>
 
 </html>
