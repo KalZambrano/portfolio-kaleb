@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import MaximizeIcon from "@/assets/icons/arrows-maximize.svg";
+import { getLogoImage } from "@/lib/images";
 
 interface Props {
   imageSrc: string;
@@ -10,16 +12,19 @@ interface Props {
 }
 
 const { imageSrc, organization, title, href, skills } = Astro.props;
+
+const logo = getLogoImage(imageSrc);
 ---
 
 <article
   class="border bg-white dark:bg-gray-950/80 border-gray-400 dark:border-gray-700 rounded-2xl p-4 hover:scale-105 transition-all flex flex-col justify-between"
 >
   <div class="flex items-center gap-4 mb-3">
-    <img
+    <Image
       class="w-16 h-fit rounded-xl"
-      src={`/${imageSrc}`}
+      src={logo}
       alt={`${organization} logo`}
+      width={128}
       loading="lazy"
       decoding="async"
     />

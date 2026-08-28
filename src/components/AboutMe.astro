@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import SectionContainer from "./SectionContainer.astro";
+import upcImage from "@/assets/upc.webp";
 import MailIcon from "@/assets/social/mail-plus.svg"
 import { CopyButton } from "./animate-ui/components/buttons/copy";
 
@@ -81,10 +83,12 @@ const i18n = getI18N({ currentLocale });
       </div>
     </div>
 
-    <img
+    <Image
       class="size-64 aspect-square ring-1 ring-gray-400/70 dark:ring-gray-200/70 rounded-3xl p-1 bg-gray-300/60 dark:bg-gray-500/60 rotate-3 md:order-2 order-1 transition-colors object-cover"
-      src="/upc.webp"
+      src={upcImage}
       alt="DevFest 2025 Conference"
+      widths={[256, 512]}
+      sizes="256px"
       loading="lazy"
       decoding="async"
     />

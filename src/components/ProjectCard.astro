@@ -1,6 +1,8 @@
 ---
+import { Picture } from "astro:assets";
 import RedirectIcon from "@/assets/icons/external-link.svg";
 import GitHub from "@/assets/social/github.svg";
+import { getProjectImage } from "@/lib/images";
 
 interface Props {
   image: string;
@@ -80,6 +82,8 @@ const generateTecIconHTML = (tec: Tec): string => {
 };
 
 const { image, title, description, github, url, tecs } = Astro.props;
+
+const projectImage = getProjectImage(image);
 ---
 
 <article
@@ -89,12 +93,15 @@ const { image, title, description, github, url, tecs } = Astro.props;
     class="rounded-t-2xl"
     style="mask-image: linear-gradient(black 70%, transparent);"
   >
-    <img
-      class="group-hover:scale-105 ease-in-out transition-all duration-400"
-      src={`/projects/${image}`}
+    <Picture
+      class="w-full group-hover:scale-105 ease-in-out transition-all duration-400"
+      src={projectImage}
       alt={`Imagen de presentación del proyecto de ${title}`}
-      width="1920"
-      height="1440"
+      formats={["avif"]}
+      fallbackFormat="webp"
+      widths={[400, 800, 1200]}
+      sizes="(min-width: 1024px) 360px, (min-width: 768px) 45vw, calc(100vw - 2.5rem)"
+      pictureAttributes={{ class: "block" }}
       loading="lazy"
       decoding="async"
     />
