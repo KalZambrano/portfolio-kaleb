@@ -17,7 +17,7 @@ const projects = projectsData.projects
   >
   {
     projects.map(({title, description, image, url, github, tecs}) => (
-        <ProjectCard title={title}, description={description[currentLocale]}, image={image}, tecs={tecs}, url={url}, github={github}/>
+        <ProjectCard title={title} description={description[currentLocale]} image={image} tecs={tecs} url={url} github={github}/>
     ))
   }
   </section>

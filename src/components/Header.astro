@@ -22,26 +22,31 @@ const translatePath = useTranslatedPath(lang);
 const navItems = [
   {
     href: translatePath("/#experiencia"),
+    section: "experiencia",
     label: "experiencia",
     text: t("nav.experiencia"),
   },
   {
     href: translatePath("/#proyectos"),
+    section: "proyectos",
     label: "proyectos",
     text: t("nav.proyectos"),
   },
   {
     href: translatePath("/#certificados"),
+    section: "certificados",
     label: "certificados",
     text: t("nav.certificados"),
   },
   {
     href: translatePath("/#habilidades"),
+    section: "habilidades",
     label: "habilidades",
     text: t("nav.habilidades"),
   },
   {
     href: translatePath("/#sobremi"),
+    section: "sobremi",
     label: "sobremi",
     text: t("nav.sobremi"),
   },
@@ -62,7 +67,7 @@ const navItems = [
     >
       {
         navItems.map((item) => (
-          <HeaderLink href={item.href} label={item.label}>
+          <HeaderLink href={item.href} label={item.label} section={item.section}>
             {item.text}
           </HeaderLink>
         ))
@@ -88,6 +93,46 @@ const navItems = [
     </a>
   </div>
 </header>
+
+<script>
+  const linkBySection = new Map<string, Element>();
+  for (const link of document.querySelectorAll("[data-nav-link]")) {
+    const section = (link as HTMLElement).dataset.navLink;
+    if (section) linkBySection.set(section, link);
+  }
+
+  const sections = Array.from(
+    document.querySelectorAll<HTMLElement>("section[data-section]")
+  ).filter((section) => linkBySection.has(section.dataset.section ?? ""));
+
+  if (sections.length > 0) {
+    const crossingBand = new Set<Element>();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) crossingBand.add(entry.target);
+          else crossingBand.delete(entry.target);
+        }
+
+        // La primera en orden de documento que cruza la banda manda
+        const current = sections.find((section) => crossingBand.has(section));
+
+        for (const [section, link] of linkBySection) {
+          if (current && section === current.dataset.section) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        }
+      },
+      // Banda fina entre el 25% y el 30% del alto del viewport
+      { rootMargin: "-25% 0px -70% 0px", threshold: 0 }
+    );
+
+    for (const section of sections) observer.observe(section);
+  }
+</script>
 
 <style>
   @media (width >= 80rem) {

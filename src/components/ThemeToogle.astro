@@ -138,25 +138,20 @@
 <script is:inline>
   const toggle = document.getElementById("theme-toggle");
   const root = document.documentElement;
+  const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-  // Cargar el tema guardado
-  const storedTheme = localStorage.getItem("theme");
-  if (storedTheme === "dark") {
-    root.classList.add("dark");
-    toggle.checked = true;
-  } else {
-    root.classList.remove("dark");
-    toggle.checked = false;
-  }
+  // El tema ya fue aplicado en el <head>; aquí solo reflejamos el estado
+  toggle.checked = root.classList.contains("dark");
 
-  // Manejar cambio de tema
   toggle.addEventListener("change", () => {
-    if (toggle.checked) {
-      root.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      root.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
+    root.classList.toggle("dark", toggle.checked);
+    localStorage.setItem("theme", toggle.checked ? "dark" : "light");
+  });
+
+  // Mientras el usuario no elija manualmente, seguimos al sistema
+  systemDark.addEventListener("change", (event) => {
+    if (localStorage.getItem("theme") !== null) return;
+    root.classList.toggle("dark", event.matches);
+    toggle.checked = event.matches;
   });
 </script>

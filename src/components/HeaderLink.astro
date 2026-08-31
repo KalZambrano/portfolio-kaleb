@@ -1,11 +1,22 @@
 ---
-const { href, label } = Astro.props;
+interface Props {
+  href: string;
+  label: string;
+  section?: string;
+}
+
+const { href, label, section } = Astro.props;
 ---
 
 <a
-  class="text-base relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 text-black dark:text-white"
+  class="text-base relative block px-3 py-1 transition hover:text-cyan-500 dark:hover:text-cyan-400 text-black dark:text-white
+  rounded-full
+    aria-[current=location]:text-cyan-700 dark:aria-[current=location]:text-cyan-500
+    aria-[current=location]:bg-cyan-700/10 dark:aria-[current=location]:bg-cyan-500/10
+    "
   href={href}
   aria-label={label}
+  data-nav-link={section}
 >
   <slot />
 </a>

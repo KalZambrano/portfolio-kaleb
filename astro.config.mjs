@@ -20,7 +20,18 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [react(), sitemap()],
+  integrations: [
+    react(),
+    sitemap({
+      i18n: {
+        defaultLocale: "es",
+        locales: {
+          es: "es",
+          en: "en",
+        },
+      },
+    }),
+  ],
 
   site: "https://portfolio-kaleb.vercel.app",
 });

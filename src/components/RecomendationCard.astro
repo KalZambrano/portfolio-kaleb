@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import MaximizeIcon from "@/assets/icons/arrows-maximize.svg";
 import GlareHover from "y/GlareHover/GlareHover";
+import { getLogoImage } from "@/lib/images";
 
 interface Props {
   imageSrc: string;
@@ -10,6 +12,8 @@ interface Props {
 }
 
 const { imageSrc, organization, author, href } = Astro.props;
+
+const logo = getLogoImage(imageSrc);
 ---
 
 <article
@@ -30,10 +34,11 @@ const { imageSrc, organization, author, href } = Astro.props;
       <div
         class="flex flex-col items-center gap-4 group-hover:opacity-5 duration-300"
       >
-        <img
+        <Image
           class="w-20 h-fit rounded-xl"
-          src={`/${imageSrc}`}
+          src={logo}
           alt={`${organization} logo`}
+          width={160}
           loading="lazy"
           decoding="async"
         />

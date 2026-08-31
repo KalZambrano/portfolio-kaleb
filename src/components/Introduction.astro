@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { SOCIAL } from "@/const/social";
+import profileImage from "@/assets/profile.webp";
 
 import Badge from "@/components/Badge.astro";
 import SocialPill from "./SocialPill.astro";
@@ -34,11 +36,13 @@ const i18n = getI18N({ currentLocale });
           aria-hidden="true"
         >
         </div>
-        <img
-          class="relative rounded-full shadow-2xl size-16 ring-2 ring-cyan-400/60 ring-offset-2 ring-offset-gray-50 dark:ring-offset-gray-950"
-          src="/profile.webp"
+        <Image
+          class="relative rounded-full shadow-2xl size-16 ring-2 ring-cyan-400/60 ring-offset-2 ring-offset-gray-50 dark:ring-offset-gray-950 object-cover"
+          src={profileImage}
           alt="Kaleb Zambrano"
-          loading="lazy"
+          width={128}
+          loading="eager"
+          fetchpriority="high"
           decoding="async"
         />
       </div>

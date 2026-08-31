@@ -4,7 +4,8 @@ import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
 import "@fontsource-variable/onest";
 import { getLangFromUrl } from "@/i18n/utils";
-// import { SOCIAL } from "@/const/social";
+import { getI18N } from "@/i18n";
+import { SOCIAL } from "@/const/social";
 
 interface Props {
   title: string;
@@ -20,20 +21,41 @@ const { title, description, keywords, siteName, siteUrl, image, author } = Astro
 const lang = getLangFromUrl(Astro.url);
 
 const siteNameSafe = siteName || "Kaleb Zambrano";
-// const authorSafe = author || siteNameSafe;
+const authorSafe = author || siteNameSafe;
 const ogImage = image || "/og-banner.webp";
 const canonical = siteUrl ? new URL(Astro.url.pathname, siteUrl).toString() : null;
 const canonicalURL = canonical || Astro.url.toString();
 
 const ogLocale = lang === "en" ? "en_US" : "es_ES";
-// const ldData = {
-//   "@context": "https://schema.org",
-//   "@type": "Person",
-//   name: authorSafe,
-//   url: siteUrl || "",
-//   sameAs: SOCIAL.map((s) => s.url),
-//   image: ogImage,
-// };
+
+// Misma ruta sin el prefijo de idioma: "/" y "/en/" son la misma pagina en dos idiomas
+const localelessPath = Astro.url.pathname.replace(/^\/en(?=\/|$)/, "") || "/";
+const alternates = siteUrl
+  ? [
+      { hreflang: "es", href: new URL(localelessPath, siteUrl).toString() },
+      { hreflang: "en", href: new URL(`/en${localelessPath}`, siteUrl).toString() },
+      { hreflang: "x-default", href: new URL(localelessPath, siteUrl).toString() },
+    ]
+  : [];
+
+const i18n = getI18N({ currentLocale: lang });
+
+const ldData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: authorSafe,
+  url: siteUrl || canonicalURL,
+  image: siteUrl ? new URL(ogImage, siteUrl).toString() : ogImage,
+  description,
+  jobTitle: i18n.HERO_JOB,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lima",
+    addressCountry: "PE",
+  },
+  knowsLanguage: ["es", "en"],
+  sameAs: SOCIAL.map((social) => social.url),
+};
 ---
 
 <!doctype html>
@@ -69,12 +91,27 @@ const ogLocale = lang === "en" ? "en_US" : "es_ES";
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    {/* hreflang for available languages (requires siteUrl prop) */}
-    <!-- {siteUrl ? <link rel="alternate" hrefLang="es" href={`${siteUrl}/`} /> : null}
-    {siteUrl ? <link rel="alternate" hrefLang="en" href={`${siteUrl}/en/`} /> : null} -->
+    {/* hreflang: versiones equivalentes por idioma */}
+    {
+      alternates.map((alt) => (
+        <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+      ))
+    }
 
-    <!-- {/* JSON-LD structured data */}
-    <script type="application/ld+json">{JSON.stringify(ldData)}</script> -->
+    {/* Datos estructurados (schema.org Person) */}
+    <script type="application/ld+json" set:html={JSON.stringify(ldData)} />
+
+    {/* Aplica el tema antes de pintar: evita el flash y respeta la preferencia del sistema */}
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem("theme");
+        const isDark =
+          stored === "dark" ||
+          (stored === null &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark", isDark);
+      })();
+    </script>
   </head>
 
   <body>
@@ -111,7 +148,5 @@ const ogLocale = lang === "en" ? "en_US" : "es_ES";
     }
   </style>
 
-
-</html>
 
 </html>
