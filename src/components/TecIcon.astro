@@ -1,0 +1,89 @@
+---
+import type { Tec } from "@/types/tec";
+
+interface Props {
+  tec: Tec;
+}
+
+const LANGUAJE_DICTIONARY: Record<
+  Tec,
+  { color: string; src: string; srcDark?: string; alt: string }
+> = {
+  Laravel: {
+    color: "bg-red-600/15",
+    src: "/icons/laravel.svg",
+    alt: "Laravel Icon",
+  },
+  Astro: {
+    color: "bg-orange-600/15 text-black",
+    src: "/icons/astro.svg",
+    srcDark: "/icons/dark/astro_dark.svg",
+    alt: "Astro Icon",
+  },
+  JS: {
+    color: "bg-yellow-600/15",
+    src: "/icons/javascript.svg",
+    alt: "JavaScript Icon",
+  },
+  Tailwind: {
+    color: "bg-cyan-600/15",
+    src: "/icons/tailwindcss.svg",
+    alt: "Tailwind Icon",
+  },
+  React: {
+    color: "bg-sky-600/15",
+    src: "/icons/dark/react_dark.svg",
+    srcDark: "/icons/react_light.svg",
+    alt: "React Icon",
+  },
+  TS: {
+    color: "bg-blue-600/15",
+    src: "/icons/typescript.svg",
+    alt: "TypeScript Icon",
+  },
+  Supabase: {
+    color: "bg-green-600/15",
+    src: "/icons/supabase.svg",
+    alt: "Supabase Icon",
+  },
+  CloudFlare: {
+    color: "bg-amber-600/15",
+    src: "/icons/cloudflare.svg",
+    alt: "CloudFlare Icon",
+  },
+};
+
+const { tec } = Astro.props;
+const { color, src, srcDark, alt } = LANGUAJE_DICTIONARY[tec];
+
+const baseClass = `size-9 ${color} p-1.5 rounded-md`;
+---
+
+{
+  srcDark ? (
+    <>
+      <img
+        class:list={[baseClass, "hidden dark:block"]}
+        src={srcDark}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+      />
+      <img
+        class:list={[baseClass, "block dark:hidden"]}
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+      />
+    </>
+  ) : (
+    <img
+      class:list={baseClass}
+      src={src}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+    />
+  )
+}

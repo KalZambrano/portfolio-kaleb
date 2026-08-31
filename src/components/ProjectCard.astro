@@ -2,7 +2,9 @@
 import { Picture } from "astro:assets";
 import RedirectIcon from "@/assets/icons/external-link.svg";
 import GitHub from "@/assets/social/github.svg";
+import TecIcon from "@/components/TecIcon.astro";
 import { getProjectImage } from "@/lib/images";
+import type { Tec } from "@/types/tec";
 
 interface Props {
   image: string;
@@ -12,74 +14,6 @@ interface Props {
   url: string;
   tecs: Tec[];
 }
-
-type Tec =
-  "Laravel" | "Astro" | "JS" | "Tailwind" | "React" | "TS" | "Supabase" | "CloudFlare";
-
-const LANGUAJE_DICTIONARY: Record<
-  Tec,
-  { color: string; src: string; srcDark?: string; alt: string }
-> = {
-  Laravel: {
-    color: "bg-red-600/15",
-    src: "/icons/laravel.svg",
-    alt: "Laravel Icon",
-  },
-  Astro: {
-    color: "bg-orange-600/15 text-black",
-    src: "/icons/astro.svg",
-    srcDark: "/icons/dark/astro_dark.svg",
-    alt: "Astro Icon",
-  },
-  JS: {
-    color: "bg-yellow-600/15",
-    src: "/icons/javascript.svg",
-    alt: "JavaScript Icon",
-  },
-  Tailwind: {
-    color: "bg-cyan-600/15",
-    src: "/icons/tailwindcss.svg",
-    alt: "Tailwind Icon",
-  },
-  React: {
-    color: "bg-sky-600/15",
-    src: "/icons/dark/react_dark.svg",
-    srcDark: "/icons/react_light.svg",
-    alt: "React Icon",
-  },
-  TS: {
-    color: "bg-blue-600/15",
-    src: "/icons/typescript.svg",
-    alt: "TypeScript Icon",
-  },
-  Supabase: {
-    color: "bg-green-600/15",
-    src: "/icons/supabase.svg",
-    alt: "Supabase Icon",
-  },
-  CloudFlare: {
-    color: "bg-amber-600/15",
-    src: "/icons/cloudflare.svg",
-    alt: "CloudFlare Icon",
-  }
-};
-
-const generateTecIconHTML = (tec: Tec): string => {
-  const { color, src, srcDark, alt } = LANGUAJE_DICTIONARY[tec];
-
-  if (srcDark) {
-    // Si hay icono específico para modo oscuro, genera dos imágenes
-    return `
-    <img class="size-9 ${color} p-1.5 rounded-md dark:block hidden" src="${srcDark}" alt="${alt}" loading="lazy" decoding="async">
-    <img class="size-9 ${color} p-1.5 rounded-md dark:hidden block" src="${src}" alt="${alt}" loading="lazy" decoding="async">
-    `;
-  } else {
-    // Si no hay icono específico, genera solo una imagen
-    return `
-    <img class="size-9 ${color} p-1.5 rounded-md" src="${src}" alt="${alt}" loading="lazy" decoding="async">
-    `;
-  }
-};
 
 const { image, title, description, github, url, tecs } = Astro.props;
 
@@ -114,9 +48,11 @@ const projectImage = getProjectImage(image);
     <div class="flex justify-between">
       <ul class="flex gap-2">
         {
-          tecs.map((tec: Tec) => {
-            return <li set:html={generateTecIconHTML(tec)} />;
-          })
+          tecs.map((tec) => (
+            <li>
+              <TecIcon tec={tec} />
+            </li>
+          ))
         }
       </ul>
       <ul class="flex gap-2">
