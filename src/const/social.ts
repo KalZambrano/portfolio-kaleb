@@ -4,6 +4,8 @@ import Instagram from "@/assets/social/instagram.svg"
 
 import { type Socials } from "@/types/network"
 
+export const EMAIL = "kalebzambranob28@gmail.com"
+
 export const SOCIAL: Socials[] = [
     {
         id: "github",

@@ -26,6 +26,18 @@
     "RECOMENDATIONS_SUBTITLE": "What have I excelled at?",
     "RECOMENDATIONS_TIP_MOBILE": "(Tap to view)"
   },
+  "CONTACT": {
+    "SUBTITLE": "Drop me a line and let's talk about it.",
+    "BUTTON": "Email me",
+    "MAIL_SUBJECT": "Contact from portfolio",
+    "HEADLINE_LINES": [
+      "Got a project",
+      "in mind? Let's do",
+      "something",
+      "together."
+    ],
+    "HEADLINE_ACCENT": "great"
+  },
   "ABOUTME": {
     "TITLE": "About me",
     "SUBTITLE": "Who am I?",

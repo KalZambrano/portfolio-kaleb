@@ -26,6 +26,18 @@
     "RECOMENDATIONS_SUBTITLE": "¿En qué he destacado?",
     "RECOMENDATIONS_TIP_MOBILE": "(Tap para ver)"
   },
+  "CONTACT": {
+    "SUBTITLE": "Escríbeme y lo conversamos.",
+    "BUTTON": "Escríbeme",
+    "MAIL_SUBJECT": "Contacto desde el portfolio",
+    "HEADLINE_LINES": [
+      "¿Tienes un proyecto",
+      "en mente? Hagamos",
+      "algo",
+      "juntos."
+    ],
+    "HEADLINE_ACCENT": "grande"
+  },
   "ABOUTME": {
     "TITLE": "Sobre mí",
     "SUBTITLE": "¿Quién soy?",
